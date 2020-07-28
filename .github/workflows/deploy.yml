@@ -11,8 +11,6 @@ jobs:
     - env:
         HASADNA_CKAN_CLOUD_DOCKER_DEPLOY_KEY: ${{ secrets.HASADNA_CKAN_CLOUD_DOCKER_DEPLOY_KEY }}
       run: |
-        SHA_TAG=sha-`git rev-parse --short $GITHUB_SHA` &&\
-        echo SHA_TAG=$SHA_TAG &&\
         if ! git log -1 --pretty=format:"%s" | grep -- --no-deploy; then
           cd `mktemp -d` &&\
           echo "${HASADNA_CKAN_CLOUD_DOCKER_DEPLOY_KEY}" > deploy_key &&\
@@ -20,7 +18,7 @@ jobs:
           export GIT_SSH_COMMAND="ssh -i `pwd`/deploy_key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" &&\
           git clone git@github.com:hasadna/ckan-cloud-docker.git &&\
           cd ckan-cloud-docker &&\
-          echo '-e "git+https://github.com/hasadna/ckanext-datacity.git@'${SHA_TAG}'#egg=ckanext-datacity"' > ckan/requirements-ckanext-datacity.txt &&\
+          echo '-e "git+https://github.com/hasadna/ckanext-datacity.git@'${GITHUB_SHA}'#egg=ckanext-datacity"' > ckan/requirements-ckanext-datacity.txt &&\
           git config --global user.name "ckanext-datacity CI" &&\
           git config --global user.email "ckanext-datacity-ci@localhost" &&\
           git add ckan/requirements-ckanext-datacity.txt && git commit -m "automatic update of ckanext-datacity" &&\
