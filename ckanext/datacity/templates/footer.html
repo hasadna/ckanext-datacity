@@ -1,7 +1,7 @@
 {% ckan_extends %}
 
 {% block footer_links %}
-  <li><a href="{{ h.url_for(controller='home', action='about') }}">{{ _('About {0}').format(g.site_title) }}</a></li>
+  <li><a href="{{ h.url_for(controller='home', action='about') }}">{{ _('About {0}').format(h.setting('site_title_'+h.lang(), h.setting('site_title_he', g.site_title))) }}</a></li>
   {% if h.setting('terms_url_' + h.lang()) %}
   <li><a href="{{ h.setting('terms_url_' + h.lang()) }}">{{ _('Terms of service') }}</a></li>
   {% elif h.setting('terms_url_he') %}

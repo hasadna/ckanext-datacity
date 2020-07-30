@@ -17,6 +17,18 @@
       "form_snippet": "slug.html"
     },
     {
+      "field_name": "site_title_he",
+      "label": "Site Title Hebrew"
+    },
+    {
+      "field_name": "site_title_en_US",
+      "label": "Site Title English"
+    },
+    {
+      "field_name": "site_title_ar",
+      "label": "Site Title Arabic"
+    },
+    {
       "field_name": "hide_register_link",
       "label": "Hide the registration link",
       "preset": "select", "choices": [{"value": "no", "label": "No"}, {"value": "yes", "label": "Yes"}]

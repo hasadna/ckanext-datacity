@@ -8,7 +8,8 @@ from ckan.lib.helpers import _make_menu_item
 from ckan.common import _
 
 
-def get_setting(setting):
+def get_setting(setting, default=None):
+    value = None
     if config.get(u'datacity.settings_group_id'):
         conn = connect_to_redis()
         key = "%s:%s" % (SETTINGS_REDIS_KEY_PREFIX, config[u'ckan.site_id'])
@@ -23,11 +24,13 @@ def get_setting(setting):
             except NotFound:
                 value = {}
             conn.set(key, json.dumps(value))
-            return value.get(setting)
+            value = value.get(setting)
         else:
-            return json.loads(raw_value).get(setting)
+            value = json.loads(raw_value).get(setting)
+    if not value and default != None:
+        return default
     else:
-        return None
+        return value
 
 
 def plugin_edit_clear_settings_cache(entity):
