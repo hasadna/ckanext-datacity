@@ -1,0 +1,69 @@
+{
+  "scheming_version": 1,
+  "group_type": "settings",
+  "about_url": "http://github.com/ckan/ckanext-scheming",
+  "fields": [
+    {
+      "field_name": "title",
+      "label": "Name",
+      "validators": "ignore_missing unicode",
+      "form_snippet": "large_text.html",
+      "form_attrs": {"data-module": "slug-preview-target"}
+    },
+    {
+      "field_name": "name",
+      "label": "URL",
+      "validators": "not_empty unicode name_validator group_name_validator",
+      "form_snippet": "slug.html"
+    },
+    {
+      "field_name": "hide_register_link",
+      "label": "Hide the registration link",
+      "preset": "select", "choices": [{"value": "no", "label": "No"}, {"value": "yes", "label": "Yes"}]
+    },
+    {
+      "field_name": "hide_login_header",
+      "label": "Hide the login/register header",
+      "preset": "select", "choices": [{"value": "no", "label": "No"}, {"value": "yes", "label": "Yes"}]
+    },
+    {
+      "field_name": "about_markdown_he",
+      "label" : "About Markdown Hebrew",
+      "form_snippet": "markdown.html"
+    },
+    {
+      "field_name": "about_markdown_en_US",
+      "label" : "About Markdown English",
+      "form_snippet": "markdown.html"
+    },
+    {
+      "field_name": "about_markdown_ar",
+      "label" : "About Markdown Arabic",
+      "form_snippet": "markdown.html"
+    },
+    {
+      "field_name": "terms_url_he",
+      "label" : "Terms URL Hebrew"
+    },
+    {
+      "field_name": "terms_url_en_US",
+      "label" : "Terms URL English"
+    },
+    {
+      "field_name": "terms_url_ar",
+      "label" : "Terms URL Arabic"
+    },
+    {
+      "field_name": "contact_url_he",
+      "label" : "Contact URL Hebrew"
+    },
+    {
+      "field_name": "contact_url_en_US",
+      "label" : "Contact URL English"
+    },
+    {
+      "field_name": "contact_url_ar",
+      "label" : "Contact URL Arabic"
+    }
+  ]
+}

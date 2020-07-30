@@ -11,9 +11,12 @@ plugins = ... datacity
 Includes ckanext-scheming schemas, to use, add the following to config:
 
 ```
-plugins = ... scheming_datasets
+plugins = ... scheming_datasets scheming_groups
 
 scheming.dataset_schemas = ckanext.datacity:scheming-dataset.json
+scheming.group_schemas = ckanext.datacity:scheming-group-settings.json
+
+datacity.settings_group_id = NAME_OR_ID_OF_THE_SETTINGS_GROUP
 ```
 
 ## Local plugin development
@@ -115,4 +118,56 @@ for LANG in he ar en_US; do
     msgfmt -o venv/src/ckan/ckan/i18n/$LANG/LC_MESSAGES/ckan.mo venv/src/ckan/ckan/i18n/$LANG/LC_MESSAGES/ckan.po &&\
     echo OK
 done
+```
+
+### Updating source translation strings
+
+This should be done when changes are made to either the source CKAN version or to the datacity extension
+
+Activate the local development server with the relevant CKAN version (following the instructions above for local plugin development)
+
+```
+. venv/bin/activate
+```
+
+Install translation requirements
+
+```
+pip install --upgrade Babel transifex-client
+```
+
+Update the .pot files
+
+```
+python setup.py extract_messages &&\
+( cd venv/src/ckan && python setup.py extract_messages )
+```
+
+Merge the .pot files
+
+```
+msgcat venv/src/ckan/ckan/i18n/ckan.pot ckanext/datacity/i18n/ckanext-datacity.pot > ckanext/datacity/i18n/ckan-datacity.pot
+```
+
+Get a Transifex API token
+
+```
+TRANSIFEX_API_TOKEN=
+```
+
+Set transifex auth file
+
+```
+echo "[https://www.transifex.com]
+api_hostname = https://api.transifex.com
+hostname = https://www.transifex.com
+password = $TRANSIFEX_API_TOKEN
+username = api
+" > ~/.transifexrc
+```
+
+Push the updated .pot file
+
+```
+tx push -s
 ```

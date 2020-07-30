@@ -1,0 +1,13 @@
+{% ckan_extends %}
+
+{% block about %}
+{% if h.setting('about_markdown_' + h.lang()) %}
+    {{ h.render_markdown(h.setting('about_markdown_' + h.lang())) }}
+{% elif h.setting('about_markdown_he') %}
+    <div dir="rtl">
+        {{ h.render_markdown(h.setting('about_markdown_he')) }}
+    </div>
+{% else %}
+    {{ super() }}
+{% endif %}
+{% endblock %}
