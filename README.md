@@ -16,7 +16,7 @@ plugins = ... scheming_datasets scheming_groups
 scheming.dataset_schemas = ckanext.datacity:scheming-dataset.json
 scheming.group_schemas = ckanext.datacity:scheming-group-settings.json
 
-datacity.settings_group_id = NAME_OR_ID_OF_THE_SETTINGS_GROUP
+datacity.settings_group_id = settings
 ```
 
 ## Local plugin development
