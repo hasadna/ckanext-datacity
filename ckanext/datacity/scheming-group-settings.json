@@ -29,6 +29,11 @@
       "label": "Site Title Arabic"
     },
     {
+      "field_name": "site_sharing_image_url",
+      "label": "Sharing image URL",
+      "help_text": "Image should be 256px X 256px and less then 300KB"
+    },
+    {
       "field_name": "hide_register_link",
       "label": "Hide the registration link",
       "preset": "select", "choices": [{"value": "no", "label": "No"}, {"value": "yes", "label": "Yes"}]

@@ -10,3 +10,11 @@
   {%- if self.subtitle()|trim %} {{ g.template_title_deliminater }} {% endif -%}
   {{ h.setting('site_title_'+h.lang(), h.setting('site_title_he', g.site_title)) }}
 {%- endblock -%}
+
+{%- block meta -%}
+  {{ super() }}
+  {% if h.setting('site_sharing_image_url') %}
+    <meta property="og:image" content="{{ h.setting('site_sharing_image_url') }}" />
+    <meta property="og:image:alt" content="{{ h.setting('site_title_'+h.lang(), h.setting('site_title_he', g.site_title)) }}" />
+  {% endif %}
+{%- endblock -%}
