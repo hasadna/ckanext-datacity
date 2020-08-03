@@ -1,0 +1,7 @@
+{% ckan_extends %}
+
+{% block facet_list_item %}
+  {% if name != "license_id" %}
+    {{ super() }}
+  {% endif %}
+{% endblock %}
