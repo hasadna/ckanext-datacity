@@ -33,6 +33,13 @@ def get_setting(setting, default=None):
         return value
 
 
+def get_datacity_settings_edit_link():
+    if config.get(u'datacity.settings_group_id'):
+        return '/settings/edit/%s' % config.get(u'datacity.settings_group_id')
+    else:
+        return None
+
+
 def plugin_edit_clear_settings_cache(entity):
     if config.get(u'datacity.settings_group_id') and entity.type == "settings" and (entity.name == config[u'datacity.settings_group_id'] or entity.id == config[u'datacity.settings_group_id']):
         conn = connect_to_redis()

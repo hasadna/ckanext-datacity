@@ -15,7 +15,8 @@ class DatacityPlugin(plugins.SingletonPlugin):
 
     def get_helpers(self):
         return {
-            "setting": helpers.get_setting
+            "setting": helpers.get_setting,
+            "datacity_settings_edit_link": helpers.get_datacity_settings_edit_link
         }
 
     def read(self, entity):
