@@ -16,7 +16,12 @@ class DatacityPlugin(plugins.SingletonPlugin):
     def get_helpers(self):
         return {
             "setting": helpers.get_setting,
-            "datacity_settings_edit_link": helpers.get_datacity_settings_edit_link
+            "datacity_settings_edit_link": helpers.get_datacity_settings_edit_link,
+            "color": helpers.get_color,
+            "site_title": helpers.get_site_title,
+            "homepage_groups": helpers.get_homepage_groups,
+            "popular_datasets": helpers.get_popular_datasets,
+            "last_updated_datasets": helpers.get_last_updated_datasets,
         }
 
     def read(self, entity):

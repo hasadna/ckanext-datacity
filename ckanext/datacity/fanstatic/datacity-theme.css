@@ -1,0 +1,141 @@
+body {
+    font-family: 'Arimo', Tahoma, "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.homepage .module-search .module-content .heading {
+    margin-top: 70px;
+    margin-bottom: 70px;
+    font-size: 3em;
+    line-height: initial;
+    text-align: center;
+}
+
+.homepage .module-search {
+    padding: 0;
+}
+
+.homepage .module-search .module-content {
+    background-color: initial;
+    padding-bottom: 120px;
+}
+
+.box {
+    border: 0;
+    box-shadow: initial;
+    background-color: initial;
+}
+
+.module-search .box {
+    background-color: initial;
+}
+
+.homepage .module-search {
+    background-color: initial;
+}
+
+.search-by-cat {
+	padding: 10px 190px;
+	margin-top: 0;
+	-webkit-border-radius: 0 0 3px 3px;
+	-moz-border-radius: 0 0 3px 3px;
+	border-radius: 0 0 3px 3px;
+}
+
+.search-by-cat h3{
+    margin-top: 0;
+    margin-bottom: 7px;
+    font-size: 24px;
+    line-height: 40px;
+}
+
+.surrey-media-grid {
+	margin: 0;
+	list-style: none;
+	padding-bottom: 15px;
+}
+
+.surrey-media-grid:before, .surrey-media-grid:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+
+.surrey-media-grid:after {
+	clear: both;
+}
+
+.surrey-media-item {
+	position: relative;
+	float: right;
+	width: 125px;
+	padding: 10px 10px 10px 13px;
+	text-align: center;
+	height: 125px;
+}
+
+.surrey-media-item span {
+	display:block;
+    text-align: center;
+}
+
+ul.surrey-media-grid {
+    margin: 0;
+    padding: 0;
+}
+
+.SectionTitle {
+    font-size: 16px;
+    color: #1D2F3B;
+    line-height: 26px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin: 0 0 50px 0;
+}
+
+.SectionTitle:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #D0021B;
+}
+
+.module-heading {
+    background-color: initial;
+    border: initial;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.module-heading i.fa-filter {
+    display: none;
+}
+
+ul.nav-facet li.nav-item span {
+    font-size: 1.1em;
+}
+
+ul.nav-facet li.nav-item {
+    border: 0;
+}
+
+.module-footer {
+    border: 0;
+    margin-bottom: 1em;
+}
+
+.wrapper {
+    border: 0;
+    box-shadow: initial;
+}
+
+[role=main] {
+    background: initial;
+    background-color: #fff;
+}

@@ -1,0 +1,35 @@
+<div role="main" class="hero">
+  <div class="container">
+    {% block search %}
+      {% snippet 'home/snippets/search.html' %}
+    {% endblock %}
+  </div>
+</div>
+
+<div role="main" class="search-by-cat-top-container">
+  <div class="container">
+    {% snippet 'home/snippets/groups.html' %}
+  </div>
+</div>
+
+<div role="main" class="homepage-datasets-top-container">
+  <div class="container">
+    {% snippet 'home/snippets/datasets.html' %}
+  </div>
+</div>
+
+{% if false %}
+<div role="main" class="odatasets">
+  <div class="container">
+    <div class="box">
+      <h2>{{ _('Latest updates') }}</h2>
+      {% snippet 'snippets/package_list.html', packages=h.homepage_datasets() %}
+      <p class="alldatasets">
+        <a href="{% url_for '/dataset' %}">{{ _('All datasets') }}</a>
+      </p>
+  </div>
+
+
+  </div>
+</div>
+{% endif %}

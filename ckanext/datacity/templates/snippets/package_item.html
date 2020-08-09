@@ -1,0 +1,9 @@
+{% ckan_extends %}
+
+{% block notes %}
+  {% if notes %}
+    <div>{{ notes|urlize }}</div>
+  {% else %}
+    <div></div>
+  {% endif %}
+{% endblock %}

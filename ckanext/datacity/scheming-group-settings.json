@@ -44,6 +44,46 @@
       "preset": "select", "choices": [{"value": "no", "label": "No"}, {"value": "yes", "label": "Yes"}]
     },
     {
+      "field_name": "top_header_background_color",
+      "label": "Top header background color"
+    },
+    {
+      "field_name": "menu_background_color",
+      "label": "Menu background color"
+    },
+    {
+      "field_name": "menu_text_color",
+      "label": "Menu text color"
+    },
+    {
+      "field_name": "menu_highlight_color",
+      "label": "Menu highlight color"
+    },
+    {
+      "field_name": "datacity_logo_url",
+      "label": "Datacity logo URL"
+    },
+    {
+      "field_name": "homepage_title_text_color",
+      "label": "Homepage title text color"
+    },
+    {
+      "field_name": "homepage_title_background_image_url",
+      "label": "Homepage title background image url"
+    },
+    {
+      "field_name": "homepage_groups_background_color",
+      "label": "Homepage groups background color"
+    },
+    {
+      "field_name": "homepage_groups_text_color",
+      "label": "Homepage groups text color"
+    },
+    {
+      "field_name": "footer_background_color",
+      "label": "Footer background color"
+    },
+    {
       "field_name": "about_markdown_he",
       "label" : "About Markdown Hebrew",
       "form_snippet": "markdown.html"

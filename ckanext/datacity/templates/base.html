@@ -3,6 +3,7 @@
 {% block styles %}
   {{ super() }}
   {% resource 'datacity/datacity-theme.css' %}
+  <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
 {% endblock %}
 
 {%- block title -%}
@@ -18,3 +19,52 @@
     <meta property="og:image:alt" content="{{ h.setting('site_title_'+h.lang(), h.setting('site_title_he', g.site_title)) }}" />
   {% endif %}
 {%- endblock -%}
+
+{%- block custom_styles %}
+  <style>
+    {%- if g.site_custom_css -%}
+    {{ g.site_custom_css | safe }}
+    {%- endif %}
+    .account-masthead {
+      background-color: {{ h.color("top_header_background_color") }};
+    }
+    .account-masthead .account ul li a {
+      color: {{ h.color("menu_text_color") }};
+    }
+    .account-masthead .account ul li a:hover {
+      color: {{ h.color("menu_text_color") }};
+      background-color: {{ h.color("menu_highlight_color") }};
+    }
+    .masthead {
+      background-color: {{ h.color("menu_background_color") }};
+    }
+    .masthead .nav > li > a {
+      color: {{ h.color("menu_text_color") }};
+    }
+    .masthead .nav > li > a:focus, .masthead .nav > li > a:hover, .masthead .nav > .active > a, .masthead .nav > .active > a:hover, .masthead .nav > .active > a:focus {
+      color: {{ h.color("menu_text_color") }};
+    }
+    .masthead .navigation .nav-pills li a:hover, .masthead .navigation .nav-pills li a:focus, .masthead .navigation .nav-pills li.active a {
+      background-color: {{ h.color("menu_highlight_color") }};
+    }
+    .hero {
+      background: url({{ h.setting('homepage_title_background_image_url', 'https://www.datacity.org.il/wp-content/uploads/2020/08/zagreb.png') }});
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    .search-by-cat-top-container {
+      background-color: {{ h.color("homepage_groups_background_color") }};
+      color: {{ h.color("homepage_groups_text_color") }};
+    }
+    .surrey-media-item span {
+      color: {{ h.color("homepage_groups_text_color") }};
+    }
+    .site-footer {
+      background-color: {{ h.color("footer_background_color") }};
+    }
+    body {
+      background-color: {{ h.color("footer_background_color") }};
+    }
+  </style>
+{% endblock %}
