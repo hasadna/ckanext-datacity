@@ -78,6 +78,10 @@ body {
     text-align: center;
 }
 
+.surrey-media-item img {
+	margin:7px 0;
+}
+
 ul.surrey-media-grid {
     margin: 0;
     padding: 0;
