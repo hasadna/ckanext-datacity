@@ -10,7 +10,10 @@ jobs:
     - uses: actions/checkout@v2
     - env:
         HASADNA_CKAN_CLOUD_DOCKER_DEPLOY_KEY: ${{ secrets.HASADNA_CKAN_CLOUD_DOCKER_DEPLOY_KEY }}
+        TRANSIFEX_API_TOKEN: ${{ secrets.TRANSIFEX_API_TOKEN }}
       run: |
+        docker pull datacity/ckanext-datacity-push-source-translations &&\
+        docker run -v $(pwd):/opt/ckanext-datacity -e TRANSIFEX_API_TOKEN datacity/ckanext-datacity-push-source-translations &&\
         if ! git log -1 --pretty=format:"%s" | grep -- --no-deploy; then
           cd `mktemp -d` &&\
           echo "${HASADNA_CKAN_CLOUD_DOCKER_DEPLOY_KEY}" > deploy_key &&\
