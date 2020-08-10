@@ -13,6 +13,14 @@
 {%- endblock -%}
 
 {%- block meta -%}
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ h.setting('google_analytics_tracking_id', 'UA-174457911-1') }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ h.setting('google_analytics_tracking_id', 'UA-174457911-1') }}');
+  </script>
   {{ super() }}
   {% if h.setting('site_sharing_image_url') %}
     <meta property="og:image" content="{{ h.setting('site_sharing_image_url') }}" />

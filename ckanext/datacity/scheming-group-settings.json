@@ -129,6 +129,11 @@
     {
       "field_name": "contact_url_ar",
       "label" : "Contact URL Arabic"
+    },
+    {
+      "field_name": "google_analytics_tracking_id",
+      "label" : "Google Analytics Tracking ID",
+      "help_text": "Get it from Google Analytics > Admin > Tracking Info > Tracking Code"
     }
   ]
 }
