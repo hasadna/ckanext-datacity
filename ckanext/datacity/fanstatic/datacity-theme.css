@@ -2,6 +2,11 @@ body {
     font-family: 'Arimo', Tahoma, "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
+.masthead .nav > li > a {
+    font-size: 16px;
+    font-weight: bold;
+}
+
 .homepage .module-search .module-content .heading {
     margin-top: 70px;
     margin-bottom: 70px;
@@ -76,6 +81,8 @@ body {
 .surrey-media-item span {
 	display:block;
     text-align: center;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .surrey-media-item img {
