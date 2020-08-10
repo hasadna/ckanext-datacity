@@ -86,5 +86,8 @@
     p.filter-list span.facet {
       padding-{{ 'right' if h.is_rtl_language() else 'left' }}: 8px;
     }
+    .lang-select label, .lang-select select, .lang-select .lang-container {
+      float: {{ 'right' if h.is_rtl_language() else 'left' }};
+    }
   </style>
 {% endblock %}
