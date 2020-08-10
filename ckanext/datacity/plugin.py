@@ -7,6 +7,8 @@ class DatacityPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.ITemplateHelpers)
     plugins.implements(plugins.IGroupController)
+    plugins.implements(plugins.IOrganizationController)
+    plugins.implements(plugins.IPackageController)
 
     def update_config(self, config):
         add_template_directory(config, 'templates')
@@ -37,4 +39,25 @@ class DatacityPlugin(plugins.SingletonPlugin):
         pass
 
     def before_view(self, pkg_dict):
+        return pkg_dict
+
+    def after_create(self, context, pkg_dict):
+        pass
+
+    def after_update(self, context, pkg_dict):
+        pass
+
+    def after_delete(self, context, pkg_dict):
+        pass
+
+    def after_show(self, context, pkg_dict):
+        pass
+
+    def before_search(self, search_params):
+        return search_params
+
+    def after_search(self, search_results, search_params):
+        return search_results
+
+    def before_index(self, pkg_dict):
         return pkg_dict

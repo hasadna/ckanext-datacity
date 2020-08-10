@@ -1,7 +1,7 @@
 <div class="search-by-cat">
     <h3 class="heading">{{ _('Search By Group') }}</h3>
     <ul class="surrey-media-grid">
-        {% for group in h.homepage_groups %}
+        {% for group in h.homepage_groups() %}
         <li class="surrey-media-item">
             <a href="{{ h.url_for(controller='group', action='read', id=group.name) }}" title="{{ group.display_name }}">
             <img src="{{ group.image_display_url }}" alt="{{ group.display_name }}" width="64" height="64">

@@ -13,18 +13,18 @@ from ckan.lib.helpers import lang
 
 
 def redis_cache(key, key_ex):
-
-    def _func(get_value):
-        conn = connect_to_redis()
-        raw_value = conn.get(key)
-        if raw_value is None:
-            value = get_value()
-            conn.set(key, json.dumps(value), ex=key_ex)
-            return value
-        else:
-            return json.loads(raw_value)
-
-    return _func
+    def _decorator(get_value):
+        def _wrapper():
+            conn = connect_to_redis()
+            raw_value = conn.get(key)
+            if raw_value is None:
+                value = get_value()
+                conn.set(key, json.dumps(value), ex=key_ex)
+                return value
+            else:
+                return json.loads(raw_value)
+        return _wrapper
+    return _decorator
 
 
 def get_setting(setting, default=None):
@@ -84,6 +84,10 @@ def plugin_edit_clear_settings_cache(entity):
         conn = connect_to_redis()
         key = "%s:%s" % (SETTINGS_REDIS_KEY_PREFIX, config[u'ckan.site_id'])
         conn.delete(key)
+    elif entity.type == "group" or entity.type == "dataset":
+        conn = connect_to_redis()
+        for key in conn.keys("ckanext:datacity:homepage:*"):
+            conn.delete(key)
 
 
 @redis_cache(HOMEPAGE_GROUPS_REDIS_KEY, HOMEPAGE_GROUPS_REDIS_KEY_EXPIRES_SECONDS)

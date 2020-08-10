@@ -4,7 +4,7 @@
             <div class="inner">
                 <h2 class="SectionTitle">{{ _('Popular datasets') }}</h2>
                 <div class="ContentInner">
-                    {% snippet 'snippets/package_list.html', packages=h.popular_datasets %}
+                    {% snippet 'snippets/package_list.html', packages=h.popular_datasets() %}
                 </div>
                 <h3 style="padding-top:20px;"><a href="{{ h.url_for(controller='package', action='search') }}">{{ _('Show all Datasets') }}</a></h3>
             </div>
@@ -15,7 +15,7 @@
             <div class="inner">
                 <h2 class="SectionTitle">{{ _('Recently updated datasets') }}</h2>
                 <div class="ContentInner">
-                    {% snippet 'snippets/package_list.html', packages=h.last_updated_datasets %}
+                    {% snippet 'snippets/package_list.html', packages=h.last_updated_datasets() %}
                 </div>
                 <h3 style="padding-top:20px;"><a href="{{ h.url_for(controller='package', action='search') }}">{{ _('Show all Datasets') }}</a></h3>
             </div>
