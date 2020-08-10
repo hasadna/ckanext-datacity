@@ -71,7 +71,6 @@ body {
 
 .surrey-media-item {
 	position: relative;
-	float: right;
 	width: 125px;
 	padding: 10px 10px 10px 13px;
 	text-align: center;
@@ -111,7 +110,6 @@ ul.surrey-media-grid {
     display: block;
     position: absolute;
     bottom: -5px;
-    left: 0;
     width: 100%;
     height: 3px;
     background-color: #D0021B;
@@ -125,9 +123,13 @@ ul.surrey-media-grid {
 }
 
 h2.module-heading span {
-    border-bottom: 3px #D0021B solid;
     display: inline-block;
     padding-bottom: 5px;
+    border-bottom: 3px solid #7E8489;
+}
+
+.filters h2.module-heading span {
+    border-bottom: 3px solid #D0021B;
 }
 
 ul.nav-facet li.nav-item span {
@@ -151,4 +153,25 @@ ul.nav-facet li.nav-item {
 [role=main] {
     background: initial;
     background-color: #fff;
+}
+
+.media-grid {
+    background: initial;
+    border: initial;
+}
+
+.module-heading i.fa-info-circle {
+    display: none;
+}
+
+div#content.container .row.wrapper {
+    border-top: 1px solid #dddddd;
+}
+
+.module-content.sidebar-helper {
+    color: #7E8489;
+}
+
+.page-header {
+    background-color: initial;
 }

@@ -66,5 +66,17 @@
     body {
       background-color: {{ h.color("footer_background_color") }};
     }
+    .wrapper:before {
+      border-{{ 'right' if h.is_rtl_language() else 'left' }}: 0;
+    }
+    .SectionTitle:after {
+      {{ 'right' if h.is_rtl_language() else 'left' }}: 0;
+    }
+    .surrey-media-item {
+      float: {{ 'right' if h.is_rtl_language() else 'left' }};
+    }
+    p.filter-list span.facet {
+      padding-{{ 'right' if h.is_rtl_language() else 'left' }}: 8px;
+    }
   </style>
 {% endblock %}
