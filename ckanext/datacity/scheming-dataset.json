@@ -34,10 +34,7 @@
     },
     {
       "field_name": "owner_org",
-      "label": {
-        "en_US": "Organization",
-        "he": "גוף מפרסם"
-      },
+      "label": "Organization",
       "preset": "dataset_organization"
     },
     {
@@ -98,35 +95,52 @@
         },
         {
           "value": "near_real_time",
-          "label": "Near real time"
+          "label": {
+            "en_US": "Near real time",
+            "he": "כמעט באופן מיידי"
+          }
         },
         {
           "value": "hourly",
-          "label": "אחת לשעה"
+          "label": {
+            "he": "אחת לשעה"
+          }
         },
         {
           "value": "daily",
-          "label": "אחת ליום"
+          "label": {
+            "he": "אחת ליום"
+          }
         },
         {
           "value": "weekly",
-          "label": "אחת לשבוע"
+          "label": {
+            "he": "אחת לשבוע"
+          }
         },
         {
           "value": "monthly",
-          "label": "אחת לחודש"
+          "label": {
+            "he": "אחת לחודש"
+          }
         },
         {
           "value": "quarterly",
-          "label": "אחת לרבעון"
+          "label": {
+            "he": "אחת לרבעון"
+          }
         },
         {
           "value": "yearly",
-          "label": "אחת לשנה"
+          "label": {
+            "he": "אחת לשנה"
+          }
         },
         {
           "value": "manually",
-          "label": "לפי צורך / באופן ייזום"
+          "label": {
+            "he": "לפי צורך / באופן ייזום"
+          }
         }
       ]
     }
