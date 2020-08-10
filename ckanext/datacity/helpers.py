@@ -46,6 +46,8 @@ def get_setting(setting, default=None):
             value = value.get(setting)
         else:
             value = json.loads(raw_value).get(setting)
+    if value:
+        value = unicode(value).strip()
     if not value and default != None:
         return default
     else:
