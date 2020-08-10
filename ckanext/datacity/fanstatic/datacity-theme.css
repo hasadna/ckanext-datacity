@@ -124,8 +124,10 @@ ul.surrey-media-grid {
     margin-bottom: 1em;
 }
 
-.module-heading i.fa-filter {
-    display: none;
+h2.module-heading span {
+    border-bottom: 3px #D0021B solid;
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
 ul.nav-facet li.nav-item span {

@@ -1,5 +1,12 @@
 {% ckan_extends %}
 
+{% block facet_list_heading %}
+  <h2 class="module-heading">
+    {% set title = title or h.get_facet_title(name) %}
+    <span>{{ title }}</span>
+  </h2>
+{% endblock %}
+
 {% block facet_list_item %}
   {% if name != "license_id" %}
     {{ super() }}
