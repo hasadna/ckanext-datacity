@@ -68,6 +68,14 @@
       "label": "Homepage title text color"
     },
     {
+      "field_name": "homepage_title_text_line_1",
+      "label": "Homepage title text line 1"
+    },
+    {
+      "field_name": "homepage_title_text_line_2",
+      "label": "Homepage title text line 2"
+    },
+    {
       "field_name": "homepage_title_background_image_url",
       "label": "Homepage title background image url"
     },
