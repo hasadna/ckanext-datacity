@@ -184,3 +184,7 @@ div#content.container .row.wrapper {
 .toolbar .breadcrumb a {
     color: #505050;
 }
+
+.masthead .logo img {
+    max-height: 80px;
+}

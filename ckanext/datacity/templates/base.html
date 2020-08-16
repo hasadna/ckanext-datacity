@@ -89,5 +89,8 @@
     .lang-select label, .lang-select select, .lang-select .lang-container {
       float: {{ 'right' if h.is_rtl_language() else 'left' }};
     }
+    .masthead .logo {
+      margin-{{ 'right' if h.is_rtl_language() else 'left' }}: 20px;
+    }
   </style>
 {% endblock %}

@@ -1,6 +1,4 @@
-{% ckan_extends %}
-
-{% block header_account %}
+{% block header_wrapper %} {% block header_account %}
 {% if c.userobj or h.setting('hide_login_header') != 'yes' %}
 <header class="account-masthead">
   <div class="container">
@@ -82,13 +80,37 @@
 </header>
 {% endif %}
 {% endblock %}
+<header class="navbar navbar-static-top masthead">
+  {% block header_debug %} {% if g.debug and not g.debug_supress_header %}
+  <div class="debug">Controller : {{ c.controller }}<br/>Action : {{ c.action }}</div>
+  {% endif %} {% endblock %}
+  <div class="container">
+    {% if h.setting('datacity_logo_url') %}
+    <div class="navbar-right">
+        <a class="logo" href="{{ h.url_for('home.index') }}"><img src="{{ h.setting('datacity_logo_url') }}" alt="{{ g.site_title }}" title="{{ g.site_title }}" /></a>
+    </div>
+    {% endif %}
+    <div class="navbar-right">
+      <button data-target="#main-navigation-toggle" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+        <span class="fa fa-bars"></span>
+      </button>
+    </div>
+    <hgroup class="{{ g.header_class }} navbar-left">
+      {% block header_logo %}
+        <a class="logo" href="{{ h.url_for('home.index') }}"><img src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="{{ g.site_title }}" title="{{ g.site_title }}" /></a>
+      {% endblock %}
+    </hgroup>
 
-{% block header_logo %}
-  <a class="logo" href="{{ h.url_for('home.index') }}"><img src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="{{ g.site_title }}" title="{{ g.site_title }}" /></a>
-  {% if h.setting('datacity_logo_url') %}
-  <a class="logo" href="{{ h.url_for('home.index') }}"><img src="{{ h.setting('datacity_logo_url') }}" alt="{{ g.site_title }}" title="{{ g.site_title }}" /></a>
-  {% endif %}
-{% endblock %}
-
-{% block header_site_search %}
+    <div class="collapse navbar-collapse" id="main-navigation-toggle">
+      {% block header_site_navigation %}
+      <nav class="section navigation">
+        <ul class="nav nav-pills">
+          {% block header_site_navigation_tabs %} {{ h.build_nav_main( ('search', _('Datasets')), ('organizations_index', _('Organizations')),
+          ('group_index', _('Groups')), ('home.about', _('About')) ) }} {% endblock %}
+        </ul>
+      </nav>
+      {% endblock %} {% block header_site_search %}{% endblock %}
+    </div>
+  </div>
+</header>
 {% endblock %}
