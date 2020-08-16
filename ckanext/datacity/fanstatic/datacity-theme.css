@@ -176,3 +176,11 @@ div#content.container .row.wrapper {
 .page-header {
     background-color: initial;
 }
+
+.context-info .image img {
+    max-width: 200px;
+}
+
+.toolbar .breadcrumb a {
+    color: #505050;
+}
