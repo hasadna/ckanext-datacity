@@ -60,7 +60,7 @@ def get_color(color):
         "menu_background_color": "d6edd2",
         "menu_text_color": "05396b",
         "menu_highlight_color": "eeeeee",
-        "homepage_title_text_color": "edf5e1",
+        "homepage_title_text_color": "005d7a",
         "homepage_groups_background_color": "005d7a",
         "homepage_groups_text_color": "edf5e1",
         "footer_background_color": "05386b",
