@@ -88,6 +88,10 @@
       "label": "Homepage groups text color"
     },
     {
+      "field_name": "homepage_featured_packages_num",
+      "label": "Homepage groups number of packages to display per component"
+    },
+    {
       "field_name": "footer_background_color",
       "label": "Footer background color"
     },

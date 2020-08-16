@@ -86,6 +86,8 @@ def plugin_edit_clear_settings_cache(entity):
         conn = connect_to_redis()
         key = "%s:%s" % (SETTINGS_REDIS_KEY_PREFIX, config[u'ckan.site_id'])
         conn.delete(key)
+        conn.delete(HOMEPAGE_POPULAR_DATASETS_REDIS_KEY)
+        conn.delete(HOMEPAGE_LAST_UPDATED_DATASETS_REDIS_KEY)
     elif entity.type == "group" or entity.type == "dataset":
         conn = connect_to_redis()
         for key in conn.keys("ckanext:datacity:homepage:*"):
@@ -105,7 +107,7 @@ def get_homepage_groups():
 def get_popular_datasets():
     return get_action("package_search")(data_dict={
         "sort": "views_recent desc",
-        "rows": 10,
+        "rows": int(get_setting("homepage_featured_packages_num", "3")),
     })["results"]
 
 
@@ -113,5 +115,5 @@ def get_popular_datasets():
 def get_last_updated_datasets():
     return get_action("package_search")(data_dict={
         "sort": "metadata_modified desc",
-        "rows": 10,
+        "rows": int(get_setting("homepage_featured_packages_num", "3")),
     })["results"]
