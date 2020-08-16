@@ -153,6 +153,10 @@ ul.nav-facet li.nav-item {
     margin-bottom: 1em;
 }
 
+footer.site-footer .attribution strong {
+    font-weight: normal;
+}
+
 .wrapper {
     border: 0;
     box-shadow: initial;
@@ -194,4 +198,8 @@ div#content.container .row.wrapper {
 
 .masthead .logo img {
     max-height: 80px;
+}
+
+form.lang-select label {
+    font-weight: normal;
 }
