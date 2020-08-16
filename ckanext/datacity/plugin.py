@@ -30,13 +30,13 @@ class DatacityPlugin(plugins.SingletonPlugin):
         pass
 
     def create(self, entity):
-        pass
+        helpers.plugin_edit_clear_settings_cache(entity)
 
     def edit(self, entity):
         helpers.plugin_edit_clear_settings_cache(entity)
 
     def delete(self, entity):
-        pass
+        helpers.plugin_edit_clear_settings_cache(entity)
 
     def before_view(self, pkg_dict):
         return pkg_dict

@@ -46,11 +46,29 @@ body {
 }
 
 .search-by-cat {
-	padding: 10px 190px;
+    padding: 10px 0;
 	margin-top: 0;
 	-webkit-border-radius: 0 0 3px 3px;
 	-moz-border-radius: 0 0 3px 3px;
 	border-radius: 0 0 3px 3px;
+}
+
+@media (min-width: 768px) {
+    .search-by-cat {
+        padding: 10px 105px;
+    }
+}
+
+@media (min-width: 992px) {
+    .search-by-cat {
+        padding: 10px 190px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .search-by-cat {
+        padding: 10px 320px;
+    }
 }
 
 .search-by-cat h3{
