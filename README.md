@@ -36,7 +36,7 @@ virtualenv --python python2 venv
 pip install setuptools==36.1
 pip install -e 'git+https://github.com/hasadna/ckan.git@master#egg=ckan'
 pip install -r venv/src/ckan/requirements.txt
-docker-compose up -d
+docker-compose up -d redis solr db
 docker-compose exec -u postgres db createuser -S -D -R -P ckan_default
 docker-compose exec -u postgres db createdb -O ckan_default ckan_default -E utf-8
 mkdir venv/etc
@@ -57,7 +57,7 @@ ckan.storage_path = /absolute/path/to/venv/storage
 Create the DB tables:
 
 ```
-( cd venv/src/ckan && paster db init -c `pwd`/../../etc/development.ini )
+paster --plugin=ckan db init -c venv/etc/development.ini
 ```
 
 Install the datacity CKAN requirements:
@@ -79,7 +79,7 @@ add `datacity` to ckan.plugins
 Create admin user
 
 ```
-( cd venv/src/ckan && paster sysadmin add admin -c `pwd`/../../etc/development.ini )
+paster --plugin=ckan sysadmin add admin -c venv/etc/development.ini
 ```
 
 (optional) to enable debugging - install dev requirements - `pip install -r venv/src/ckan/dev-requirements.txt` and set debug=true in `venv/etc/development.ini`
@@ -89,9 +89,9 @@ Create admin user
 #### Start the development server
 
 ```
-docker-compose up -d
+docker-compose up -d redis solr db
 . venv/bin/activate
-( cd venv/src/ckan && paster serve `pwd`/../../etc/development.ini )
+paster --plugin=ckan serve venv/etc/development.ini
 ```
 
 Stop all containers
@@ -170,4 +170,37 @@ Push the updated .pot file
 
 ```
 tx push -s
+```
+
+## Enabling datastore and xloader for local development
+
+### Install
+
+```
+docker-compose exec -u postgres db createuser -S -D -R -P -l datastore_default
+docker-compose exec -u postgres db createdb -O ckan_default datastore_default -E utf-8
+```
+
+Edit `venv/etc/development.init`:
+
+* Add to ckan.plugins: `datastore xloader`
+* `ckan.datastore.write_url = postgresql://ckan_default:123456@127.0.0.1/datastore_default`
+* `ckan.datastore.read_url = postgresql://datastore_default:123456@127.0.0.1/datastore_default`
+* `ckanext.xloader.unicode_headers = True`
+
+set datastore permissions
+
+```
+paster --plugin=ckan datastore -c venv/etc/development.ini set-permissions | docker-compose exec -T -u postgres db psql
+```
+
+### Usage
+
+Start CKAN normally
+
+Start the Jobs service
+
+```
+. venv/bin/.activate
+paster --plugin=ckan jobs -c venv/etc/development.ini worker
 ```
