@@ -1,0 +1,25 @@
+{
+  "scheming_version": 1,
+  "group_type": "automation",
+  "about_url": "http://github.com/ckan/ckanext-scheming",
+  "fields": [
+    {
+      "field_name": "title",
+      "label": "Name",
+      "validators": "ignore_missing unicode",
+      "form_snippet": "large_text.html",
+      "form_attrs": {"data-module": "slug-preview-target"}
+    },
+    {
+      "field_name": "name",
+      "label": "URL",
+      "validators": "not_empty unicode name_validator group_name_validator",
+      "form_snippet": "slug.html"
+    },
+    {
+      "field_name": "json",
+      "label": "Json",
+      "form_snippet": "markdown.html"
+    }
+  ]
+}
