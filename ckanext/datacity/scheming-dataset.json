@@ -199,6 +199,20 @@
         "he": "לאילו שנים מתייחסים הנתונים",
         "en_US": "Years"
       }
+    },
+    {
+      "field_name": "geo_lat_field",
+      "label": {
+        "he": "מידע גאוגרפי: עמודת lat",
+        "en_US": "Geo data: lat column"
+      }
+    },
+    {
+      "field_name": "geo_lon_field",
+      "label": {
+        "he": "מידע גאוגרפי: עמודת lon",
+        "en_US": "Geo data: lon column"
+      }
     }
   ]
 }
