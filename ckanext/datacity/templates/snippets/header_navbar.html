@@ -1,0 +1,29 @@
+{% if h.setting('datacity_logo_url') %}
+<div class="navbar-right">
+    <a class="logo" href="{{ h.url_for('home.index') }}"><img src="{{ h.setting('datacity_logo_url') }}" alt="{{ g.site_title }}" title="{{ g.site_title }}"/></a>
+</div>
+{% endif %}
+
+<div class="navbar-right">
+    <button data-target="#main-navigation-toggle" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+        <span class="fa fa-bars"></span>
+    </button>
+</div>
+
+<hgroup class="{{ g.header_class }} navbar-{% if h.setting('header_navbar_style') == 'city-logo-left' %}right{% else %}left{% endif %}">
+    {% block header_logo %}
+    <a class="logo" href="{{ h.url_for('home.index') }}"><img src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="{{ g.site_title }}" title="{{ g.site_title }}"/></a>
+    {% endblock %}
+</hgroup>
+
+<div class="collapse navbar-collapse {% if h.setting('header_navbar_style') == 'city-logo-left' %}navbar-left{% endif %}" id="main-navigation-toggle">
+    {% block header_site_navigation %}
+    <nav class="section navigation">
+        <ul class="nav nav-pills">
+            {% block header_site_navigation_tabs %} {{ h.build_nav_main( ('search', _('Datasets')),
+            ('organizations_index', _('Organizations')),
+            ('group_index', _('Groups')), ('home.about', _('About')) ) }} {% endblock %}
+        </ul>
+    </nav>
+    {% endblock %} {% block header_site_search %}{% endblock %}
+</div>

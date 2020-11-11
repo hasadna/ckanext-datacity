@@ -8,6 +8,10 @@ body {
     font-weight: bold;
 }
 
+hgroup.header-image.navbar-right {
+    padding-left: 50px;
+}
+
 .homepage .module-search .module-content .heading {
     margin-top: 70px;
     margin-bottom: 70px;

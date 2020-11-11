@@ -44,6 +44,11 @@
       "preset": "select", "choices": [{"value": "no", "label": "No"}, {"value": "yes", "label": "Yes"}]
     },
     {
+      "field_name": "header_navbar_style",
+      "label" : "Header Navbar Style",
+      "preset": "select", "choices": [{"value":  "default", "label":  "Default style"}, {"value":  "city-logo-left", "label":  "City Logo aligned to the left"}]
+    },
+    {
       "field_name": "top_header_background_color",
       "label": "Top header background color"
     },
