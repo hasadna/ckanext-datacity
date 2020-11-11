@@ -5,20 +5,15 @@
   <div class="col-md-4 footer-links">
     {% block footer_nav %}
       <ul class="list-unstyled">
-        {% block footer_links %}
-          <li><a href="{{ h.url_for(controller='home', action='about') }}">{{ _('About {0}').format(h.setting('site_title_'+h.lang(), h.setting('site_title_he', g.site_title))) }}</a></li>
-          {% if h.setting('terms_url_' + h.lang()) %}
-          <li><a href="{{ h.setting('terms_url_' + h.lang()) }}">{{ _('Terms of service') }}</a></li>
-          {% elif h.setting('terms_url_he') %}
-          <li><a href="{{ h.setting('terms_url_he') }}">{{ _('Terms of service') }}</a></li>
-          {% endif %}
-          {% if h.setting('contact_url_' + h.lang()) %}
-          <li><a href="{{ h.setting('contact_url_' + h.lang()) }}">{{ _('Contact us') }}</a></li>
-          {% elif h.setting('contact_url_he') %}
-          <li><a href="{{ h.setting('contact_url_he') }}">{{ _('Contact us') }}</a></li>
-          {% endif %}
-        {% endblock %}
+        <li><a href="{{ h.url_for(controller='home', action='about') }}">{{ _('About {0}').format(h.setting('site_title_'+h.lang(), h.setting('site_title_he', g.site_title))) }}</a></li>
       </ul>
+      {% if h.setting('footer_links_markdown_' + h.lang()) %}
+          {{ h.render_markdown(h.setting('footer_links_markdown_' + h.lang())) }}
+      {% elif h.setting('footer_links_markdown_he') %}
+          <div dir="rtl">
+              {{ h.render_markdown(h.setting('footer_links_markdown_he')) }}
+          </div>
+      {% endif %}
       <ul class="list-unstyled">
         {% block footer_links_ckan %}
           {% set api_url = 'http://docs.ckan.org/en/{0}/api/'.format(g.ckan_doc_version) %}

@@ -101,6 +101,24 @@
       "label": "Footer background color"
     },
     {
+      "field_name":  "footer_links_markdown_he",
+      "label": "Footer Links Markdown Hebrew",
+      "form_snippet": "footer_links_markdown.html",
+      "form_placeholder": "* [קישור ראשון](https://www.example.com)\n* [קישור שני](https://www.example.com)"
+    },
+    {
+      "field_name":  "footer_links_markdown_en_US",
+      "label": "Footer Links Markdown English",
+      "form_snippet": "footer_links_markdown.html",
+      "form_placeholder": "* [first link](https://www.example.com)\n* [second link](https://www.example.com)"
+    },
+    {
+      "field_name":  "footer_links_markdown_ar",
+      "label": "Footer Links Markdown Arabic",
+      "form_snippet": "footer_links_markdown.html",
+      "form_placeholder": "* [الرابط الثاني](https://www.example.com)\n* [رابط واحد](https://www.example.com)"
+    },
+    {
       "field_name": "about_markdown_he",
       "label" : "About Markdown Hebrew",
       "form_snippet": "markdown.html"
@@ -114,30 +132,6 @@
       "field_name": "about_markdown_ar",
       "label" : "About Markdown Arabic",
       "form_snippet": "markdown.html"
-    },
-    {
-      "field_name": "terms_url_he",
-      "label" : "Terms URL Hebrew"
-    },
-    {
-      "field_name": "terms_url_en_US",
-      "label" : "Terms URL English"
-    },
-    {
-      "field_name": "terms_url_ar",
-      "label" : "Terms URL Arabic"
-    },
-    {
-      "field_name": "contact_url_he",
-      "label" : "Contact URL Hebrew"
-    },
-    {
-      "field_name": "contact_url_en_US",
-      "label" : "Contact URL English"
-    },
-    {
-      "field_name": "contact_url_ar",
-      "label" : "Contact URL Arabic"
     },
     {
       "field_name": "google_analytics_tracking_id",

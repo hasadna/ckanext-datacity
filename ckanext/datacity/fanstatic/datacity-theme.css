@@ -179,6 +179,13 @@ footer.site-footer .attribution strong {
     font-weight: normal;
 }
 
+.site-footer .footer-links ul {
+    margin: 0;
+    list-style: none;
+    padding-right: 0;
+    padding-left: 0;
+}
+
 .wrapper {
     border: 0;
     box-shadow: initial;
