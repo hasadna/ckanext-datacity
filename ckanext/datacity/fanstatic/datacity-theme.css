@@ -151,26 +151,49 @@ ul.surrey-media-grid {
     padding: 0;
 }
 
-.SectionTitle {
-    font-size: 16px;
-    color: #1D2F3B;
+.homepage-datasets-top-container .SectionTitle {
+    font-size: 24px;
+    color: #1c4f7c;
     line-height: 26px;
     position: relative;
     display: inline-block;
     vertical-align: middle;
     text-transform: uppercase;
-    font-weight: normal;
-    margin: 0 0 50px 0;
+    font-weight: bold;
+    margin: 50px 0 35px 0;
 }
 
-.SectionTitle:after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: -5px;
-    width: 100%;
-    height: 3px;
-    background-color: #D0021B;
+.homepage-datasets-top-container h3.dataset-heading a {
+    font-weight: bold;
+    font-size: 16px;
+    color: #1c4f7c;
+}
+
+.homepage-datasets-top-container div {
+    font-size: 14px;
+    color: #1c4f7c;
+}
+
+.homepage-datasets-top-container .show-all-datasets-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+.homepage-datasets-top-container .show-all-datasets-wrap h3 {
+    padding-top:20px;
+    border: 2px solid #1c4f7c;
+    border-radius: 9px;
+    text-align: center;
+    width: 230px;
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.homepage-datasets-top-container .show-all-datasets-wrap h3 a {
+    color: #1c4f7c;
 }
 
 .module-heading {
