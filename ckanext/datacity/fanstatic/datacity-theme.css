@@ -1,5 +1,5 @@
 body {
-    font-family: 'Arimo', Tahoma, "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-family: 'Rubik', Tahoma, "Helvetica Neue", Arial, Helvetica, sans-serif;
     background: initial;
 }
 
@@ -23,7 +23,6 @@ body {
 }
 
 .homepage .module-search h3.heading {
-    font-family: 'Rubrik', Tahoma, "Helvetica Neue", Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 40px;
 }
@@ -36,7 +35,6 @@ body {
 }
 
 .homepage .module-search .search-title {
-    font-family: 'Rubrik', Tahoma, "Helvetica Neue", Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 16px;
     padding-bottom: 10px;
@@ -76,30 +74,32 @@ body {
 	-webkit-border-radius: 0 0 3px 3px;
 	-moz-border-radius: 0 0 3px 3px;
 	border-radius: 0 0 3px 3px;
+    margin-bottom: 55px;
 }
 
 @media (min-width: 768px) {
     .search-by-cat {
-        padding: 10px 105px;
+        padding: 10px 40px;
     }
 }
 
 @media (min-width: 992px) {
     .search-by-cat {
-        padding: 10px 190px;
+        padding: 10px 140px;
     }
 }
 
 @media (min-width: 1200px) {
     .search-by-cat {
-        padding: 10px 320px;
+        padding: 10px 245px;
     }
 }
 
 .search-by-cat h3{
-    margin-top: 0;
-    margin-bottom: 7px;
-    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: bold;
     line-height: 40px;
     text-align: center;
 }
@@ -122,10 +122,17 @@ body {
 
 .surrey-media-item {
 	position: relative;
-	width: 125px;
+	width: 160px;
 	padding: 10px 10px 10px 13px;
 	text-align: center;
-	height: 125px;
+	height: 160px;
+}
+
+.surrey-media-item-wrap {
+    background-color: #37678c;
+    border-radius: 30px;
+    height: 130px;
+    padding-top: 10px;
 }
 
 .surrey-media-item span {
@@ -269,7 +276,6 @@ form.lang-select label {
 }
 
 .dc-flex-navbar .dcfn-item.dcfni-navbar a {
-    font-family: 'Rubik', Tahoma, "Helvetica Neue", Arial, Helvetica, sans-serif;
     font-size: 16px;
     padding-bottom: 3px;
 }
