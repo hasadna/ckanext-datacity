@@ -8,10 +8,6 @@ body {
     font-weight: bold;
 }
 
-hgroup.header-image.navbar-right {
-    padding-left: 50px;
-}
-
 .homepage .module-search .module-content .heading {
     margin-top: 70px;
     margin-bottom: 70px;
@@ -231,4 +227,63 @@ div#content.container .row.wrapper {
 
 form.lang-select label {
     font-weight: normal;
+}
+
+.dc-flex-navbar {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.dc-flex-navbar .dcfn-item {
+    flex-grow: 2;
+}
+
+.dc-flex-navbar .dcfn-item.dcfni-navbar {
+    flex-grow: 6;
+    display: flex;
+}
+
+.dc-flex-navbar .dcfn-item.dcfni-navbar a {
+    font-family: 'Rubik', Tahoma, "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding-bottom: 3px;
+}
+
+.dc-flex-navbar .dcfn-item.dcfni-navbar a:hover::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 3px;
+    top: 100%;
+    left: 0;
+}
+
+.dc-flex-navbar .dcfn-item.dcfni-navbar li.active a::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 3px;
+    top: 100%;
+    left: 0;
+}
+
+.masthead .navigation .nav-pills li a:hover, .masthead .navigation .nav-pills li a:focus, .masthead .navigation .nav-pills li.active a {
+    background-color: transparent;
+}
+
+.dc-flex-navbar .dcfn-item.dcfni-navbar nav.section.navigation {
+    margin: 0 auto;
+}
+
+.masthead .logo {
+    margin-right: 0 !important;
+}
+
+.dcfni-city-logo hgroup {
+    text-align: right;
+}
+
+.dcfni-datacity-logo {
+    text-align: left;
 }

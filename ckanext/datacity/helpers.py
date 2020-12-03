@@ -56,10 +56,10 @@ def get_setting(setting, default=None):
 
 def get_color(color):
     value = get_setting(color, {
-        "top_header_background_color": "d6edd2",
-        "menu_background_color": "d6edd2",
-        "menu_text_color": "05396b",
-        "menu_highlight_color": "eeeeee",
+        "top_header_background_color": "eeeeee",
+        "menu_background_color": "eeeeee",
+        "menu_text_color": "1c4f7c",
+        "menu_highlight_color": "f1ae89",
         "homepage_title_text_color": "005d7a",
         "homepage_groups_background_color": "005d7a",
         "homepage_groups_text_color": "edf5e1",
