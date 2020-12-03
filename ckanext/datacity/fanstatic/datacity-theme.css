@@ -9,26 +9,51 @@ body {
 }
 
 .homepage .module-search .module-content .heading {
-    margin-top: 70px;
-    margin-bottom: 70px;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin: -36px 25% 170px;
     font-size: 3em;
     line-height: initial;
     text-align: center;
-    background-color: rgba(255,255,255,0.5);
-    border-radius: 10px;
+    border-radius: 35px;
     width: 50%;
-    padding: 20px;
+    padding: 70px 20px 30px;
 }
 
 .homepage .module-search {
     padding: 0;
 }
 
+.homepage .module-search h3.heading {
+    font-family: 'Rubrik', Tahoma, "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+}
+
 .homepage .module-search .module-content {
     background-color: initial;
-    padding-bottom: 120px;
+    padding-bottom: 20px;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.homepage .module-search .search-title {
+    font-family: 'Rubrik', Tahoma, "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+
+.search-form .search-input.search-giant {
+    margin: 0 25%;
+}
+
+.search-form .search-input.search-giant button {
+    margin-top: 0;
+}
+
+.homepage .module-search .search-giant input {
+    border-color: #0058a9;
+    border-width: 2px;
+    border-radius: 15px;
 }
 
 .box {
@@ -187,9 +212,8 @@ footer.site-footer .attribution strong {
     box-shadow: initial;
 }
 
-[role=main] {
-    background: initial;
-    background-color: #fff;
+.homepage [role=main] {
+    padding-top: 0;
 }
 
 .media-grid {

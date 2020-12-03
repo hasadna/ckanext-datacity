@@ -108,5 +108,11 @@
     }
     {% endif %}
     {% if h.setting('header_navbar_style') == 'city-logo-left' %}.dc-flex-navbar {flex-direction: row;}{% endif %}
+    .homepage .module-search .module-content .heading {
+      background-color: {{ h.color("menu_background_color") }};
+    }
+    .homepage .module-search .search-title {
+      color: {{ h.color('homepage_title_text_color') }};
+    }
   </style>
 {% endblock %}
