@@ -63,7 +63,7 @@ def get_color(color):
         "homepage_title_text_color": "1c4f7c",
         "homepage_groups_background_color": "1c4f7c",
         "homepage_groups_text_color": "ffffff",
-        "footer_background_color": "05386b",
+        "footer_background_color": "1c4f7c",
     }.get(color, "#000000"))
     if not value.startswith("#"):
         value = "#" + value

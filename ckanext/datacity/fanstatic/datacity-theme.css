@@ -226,17 +226,6 @@ ul.nav-facet li.nav-item {
     margin-bottom: 1em;
 }
 
-footer.site-footer .attribution strong {
-    font-weight: normal;
-}
-
-.site-footer .footer-links ul {
-    margin: 0;
-    list-style: none;
-    padding-right: 0;
-    padding-left: 0;
-}
-
 .wrapper {
     border: 0;
     box-shadow: initial;
@@ -339,4 +328,72 @@ form.lang-select label {
 
 .dcfni-datacity-logo {
     text-align: left;
+}
+
+.footer-row {
+    display: flex;
+    margin-top: 50px;
+}
+
+.footer-col {
+    flex-grow: 3;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+.footer-col a {
+    color: white;
+}
+
+.footer-col-iia {
+    text-align: left;
+    flex-grow: 1;
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+.footer-col-iia div {
+    margin-bottom: 35px;
+}
+
+.footer-col-hasadna {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.footer-col-hasadna div {
+    margin-bottom: 35px;
+}
+
+.footer-col-code div {
+    margin-bottom: 15px;
+}
+
+.footer-col-code .github-logo-icon {
+    padding-right: 15px;
+    padding-left: 15px;
+    height:1.5em;
+}
+
+.footer-col-code .ckan-logo-icon {
+    padding-right: 15px;
+    padding-left: 15px;
+    height:1.5em;
+}
+
+.footer-col-site ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-col-site li {
+    margin-bottom: 15px;
+}
+
+form.lang-select label {
+    font-weight: bold;
+    color: white;
+    font-size: 14px;
 }
