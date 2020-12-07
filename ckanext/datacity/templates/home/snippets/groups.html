@@ -1,11 +1,13 @@
 <div class="search-by-cat">
-    <h3 class="heading">{{ _('Search By Group') }}</h3>
+    <h3 class="heading">{{ _('Or, Search By Group') }}:</h3>
     <ul class="surrey-media-grid">
         {% for group in h.homepage_groups() %}
         <li class="surrey-media-item">
-            <a href="{{ h.url_for(controller='group', action='read', id=group.name) }}" title="{{ group.display_name }}">
-            <img src="{{ group.image_display_url }}" alt="{{ group.display_name }}" width="64" height="64">
-            <span>{{ group.display_name }}</span></a>
+            <div class="surrey-media-item-wrap">
+                <a href="{{ h.url_for(controller='group', action='read', id=group.name) }}" title="{{ group.display_name }}">
+                <img src="{{ group.image_display_url }}" alt="{{ group.display_name }}" width="51" height="51">
+                <span>{{ group.display_name }}</span></a>
+            </div>
         </li>
         {% endfor %}
     </ul>

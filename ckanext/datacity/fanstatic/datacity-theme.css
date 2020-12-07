@@ -1,5 +1,5 @@
 body {
-    font-family: 'Arimo', Tahoma, "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-family: 'Rubik', Tahoma, "Helvetica Neue", Arial, Helvetica, sans-serif;
     background: initial;
 }
 
@@ -8,31 +8,50 @@ body {
     font-weight: bold;
 }
 
-hgroup.header-image.navbar-right {
-    padding-left: 50px;
-}
-
 .homepage .module-search .module-content .heading {
-    margin-top: 70px;
-    margin-bottom: 70px;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin: -36px 25% 170px;
     font-size: 3em;
     line-height: initial;
     text-align: center;
-    background-color: rgba(255,255,255,0.5);
-    border-radius: 10px;
+    border-radius: 35px;
     width: 50%;
-    padding: 20px;
+    padding: 70px 20px 30px;
 }
 
 .homepage .module-search {
     padding: 0;
 }
 
+.homepage .module-search h3.heading {
+    font-weight: bold;
+    font-size: 40px;
+}
+
 .homepage .module-search .module-content {
     background-color: initial;
-    padding-bottom: 120px;
+    padding-bottom: 20px;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.homepage .module-search .search-title {
+    font-weight: bold;
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+
+.search-form .search-input.search-giant {
+    margin: 0 25%;
+}
+
+.search-form .search-input.search-giant button {
+    margin-top: 0;
+}
+
+.homepage .module-search .search-giant input {
+    border-color: #0058a9;
+    border-width: 2px;
+    border-radius: 15px;
 }
 
 .box {
@@ -55,30 +74,32 @@ hgroup.header-image.navbar-right {
 	-webkit-border-radius: 0 0 3px 3px;
 	-moz-border-radius: 0 0 3px 3px;
 	border-radius: 0 0 3px 3px;
+    margin-bottom: 55px;
 }
 
 @media (min-width: 768px) {
     .search-by-cat {
-        padding: 10px 105px;
+        padding: 10px 40px;
     }
 }
 
 @media (min-width: 992px) {
     .search-by-cat {
-        padding: 10px 190px;
+        padding: 10px 140px;
     }
 }
 
 @media (min-width: 1200px) {
     .search-by-cat {
-        padding: 10px 320px;
+        padding: 10px 245px;
     }
 }
 
 .search-by-cat h3{
-    margin-top: 0;
-    margin-bottom: 7px;
-    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: bold;
     line-height: 40px;
     text-align: center;
 }
@@ -101,10 +122,17 @@ hgroup.header-image.navbar-right {
 
 .surrey-media-item {
 	position: relative;
-	width: 125px;
+	width: 160px;
 	padding: 10px 10px 10px 13px;
 	text-align: center;
-	height: 125px;
+	height: 160px;
+}
+
+.surrey-media-item-wrap {
+    background-color: #37678c;
+    border-radius: 30px;
+    height: 130px;
+    padding-top: 10px;
 }
 
 .surrey-media-item span {
@@ -123,26 +151,49 @@ ul.surrey-media-grid {
     padding: 0;
 }
 
-.SectionTitle {
-    font-size: 16px;
-    color: #1D2F3B;
+.homepage-datasets-top-container .SectionTitle {
+    font-size: 24px;
+    color: #1c4f7c;
     line-height: 26px;
     position: relative;
     display: inline-block;
     vertical-align: middle;
     text-transform: uppercase;
-    font-weight: normal;
-    margin: 0 0 50px 0;
+    font-weight: bold;
+    margin: 50px 0 35px 0;
 }
 
-.SectionTitle:after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: -5px;
-    width: 100%;
-    height: 3px;
-    background-color: #D0021B;
+.homepage-datasets-top-container h3.dataset-heading a {
+    font-weight: bold;
+    font-size: 16px;
+    color: #1c4f7c;
+}
+
+.homepage-datasets-top-container div {
+    font-size: 14px;
+    color: #1c4f7c;
+}
+
+.homepage-datasets-top-container .show-all-datasets-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+.homepage-datasets-top-container .show-all-datasets-wrap h3 {
+    padding-top:20px;
+    border: 2px solid #1c4f7c;
+    border-radius: 9px;
+    text-align: center;
+    width: 230px;
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.homepage-datasets-top-container .show-all-datasets-wrap h3 a {
+    color: #1c4f7c;
 }
 
 .module-heading {
@@ -175,25 +226,13 @@ ul.nav-facet li.nav-item {
     margin-bottom: 1em;
 }
 
-footer.site-footer .attribution strong {
-    font-weight: normal;
-}
-
-.site-footer .footer-links ul {
-    margin: 0;
-    list-style: none;
-    padding-right: 0;
-    padding-left: 0;
-}
-
 .wrapper {
     border: 0;
     box-shadow: initial;
 }
 
-[role=main] {
-    background: initial;
-    background-color: #fff;
+.homepage [role=main] {
+    padding-top: 0;
 }
 
 .media-grid {
@@ -231,4 +270,130 @@ div#content.container .row.wrapper {
 
 form.lang-select label {
     font-weight: normal;
+}
+
+.dc-flex-navbar {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.dc-flex-navbar .dcfn-item {
+    flex-grow: 2;
+}
+
+.dc-flex-navbar .dcfn-item.dcfni-navbar {
+    flex-grow: 6;
+    display: flex;
+}
+
+.dc-flex-navbar .dcfn-item.dcfni-navbar a {
+    font-size: 16px;
+    padding-bottom: 3px;
+}
+
+.dc-flex-navbar .dcfn-item.dcfni-navbar a:hover::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 3px;
+    top: 100%;
+    left: 0;
+}
+
+.dc-flex-navbar .dcfn-item.dcfni-navbar li.active a::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 3px;
+    top: 100%;
+    left: 0;
+}
+
+.masthead .navigation .nav-pills li a:hover, .masthead .navigation .nav-pills li a:focus, .masthead .navigation .nav-pills li.active a {
+    background-color: transparent;
+}
+
+.dc-flex-navbar .dcfn-item.dcfni-navbar nav.section.navigation {
+    margin: 0 auto;
+}
+
+.masthead .logo {
+    margin-right: 0 !important;
+}
+
+.dcfni-city-logo hgroup {
+    text-align: right;
+}
+
+.dcfni-datacity-logo {
+    text-align: left;
+}
+
+.footer-row {
+    display: flex;
+    margin-top: 50px;
+}
+
+.footer-col {
+    flex-grow: 3;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+.footer-col a {
+    color: white;
+}
+
+.footer-col-iia {
+    text-align: left;
+    flex-grow: 1;
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+.footer-col-iia div {
+    margin-bottom: 35px;
+}
+
+.footer-col-hasadna {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.footer-col-hasadna div {
+    margin-bottom: 35px;
+}
+
+.footer-col-code div {
+    margin-bottom: 15px;
+}
+
+.footer-col-code .github-logo-icon {
+    padding-right: 15px;
+    padding-left: 15px;
+    height:1.5em;
+}
+
+.footer-col-code .ckan-logo-icon {
+    padding-right: 15px;
+    padding-left: 15px;
+    height:1.5em;
+}
+
+.footer-col-site ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-col-site li {
+    margin-bottom: 15px;
+}
+
+form.lang-select label {
+    font-weight: bold;
+    color: white;
+    font-size: 14px;
 }
