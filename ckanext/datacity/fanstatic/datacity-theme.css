@@ -287,12 +287,7 @@ form.lang-select label {
     align-items: center;
 }
 
-.dc-flex-navbar .dcfn-item {
-    flex-grow: 2;
-}
-
 .dc-flex-navbar .dcfn-item.dcfni-navbar {
-    flex-grow: 6;
     display: flex;
 }
 
@@ -331,12 +326,19 @@ form.lang-select label {
     margin-right: 0 !important;
 }
 
+.dcfni-city-logo {
+    flex-basis: 200px;
+    flex-grow: 2;
+}
+
 .dcfni-city-logo hgroup {
     text-align: right;
 }
 
 .dcfni-datacity-logo {
     text-align: left;
+    flex-basis: 200px;
+    flex-grow: 2;
 }
 
 .footer-row {
