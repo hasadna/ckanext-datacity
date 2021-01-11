@@ -44,10 +44,6 @@ body {
     margin: 0 25%;
 }
 
-.search-form .search-input.search-giant button {
-    margin-top: 0;
-}
-
 .homepage .module-search .search-giant input {
     border-color: #0058a9;
     border-width: 2px;
