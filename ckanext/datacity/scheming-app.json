@@ -1,0 +1,185 @@
+{
+  "scheming_version": 1,
+  "dataset_type": "app",
+  "dataset_fields": [
+    {
+      "field_name": "title",
+      "label": "Title",
+      "preset": "title",
+      "form_placeholder": "The name of the app"
+    },
+    {
+      "field_name": "name",
+      "label": "URL",
+      "preset": "app_slug",
+      "form_placeholder": "eg. my-aoo"
+    },
+    {
+      "field_name": "notes",
+      "label": "Description",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "eg. Describe what the app does"
+    },
+    {
+      "field_name": "tag_string",
+      "label": "Tags",
+      "preset": "tag_string_autocomplete",
+      "form_placeholder": "eg. education, geographic, businesses"
+    },
+    {
+      "field_name": "pricing",
+      "label": "Pricing",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "eg. How much does it cost to use the app"
+    },
+    {
+      "field_name": "required_datasets",
+      "label": "Required Datasets",
+      "repeating_subfields": [
+        {
+          "field_name": "name",
+          "label": "Name",
+          "required": true
+        },
+        {
+          "field_name": "importance",
+          "label": "Importance",
+          "preset": "select",
+          "choices": [
+            {
+              "label": "Must-have",
+              "value": "must"
+            },
+            {
+              "label": "Should-have",
+              "value": "should"
+            },
+            {
+              "label": "Could-have",
+              "value": "could"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "field_name": "homepage_url",
+      "label": "Homepage URL",
+      "form_placeholder": "http://example.com/",
+      "display_property": "foaf:homepage",
+      "display_snippet": "link.html"
+    },
+    {
+      "field_name": "demo_url",
+      "label": "Demo URL",
+      "form_placeholder": "http://example.com/",
+      "display_snippet": "link.html"
+    },
+    {
+      "field_name": "contact",
+      "label": "Contact Person",
+      "form_placeholder": "Joe Bloggs",
+      "display_property": "dc:contributor"
+    },
+    {
+      "field_name": "contact_email",
+      "label": "Contact Person Email",
+      "form_placeholder": "joe@example.com",
+      "display_property": "dc:contributor",
+      "display_snippet": "email.html",
+      "display_email_name_field": "maintainer"
+    },
+    {
+      "field_name": "source_code",
+      "label": "Source Code URL",
+      "form_placeholder": "e.g. Link to GitHub",
+      "display_snippet": "link.html"
+    },
+    {
+      "field_name": "target_audience",
+      "label": "Target Audience",
+      "preset": "tag_string_autocomplete",
+      "form_placeholder": "eg. visitors, residents, business owners, government, municipality, ..."
+    },
+    {
+      "field_name": "license_id",
+      "label": "License",
+      "form_snippet": "license.html",
+      "help_text": "License definitions and additional information can be found at http://opendefinition.org/",
+      "default": "odc-odbl"
+    },
+    {
+      "field_name": "owner_org",
+      "label": "Organization",
+      "preset": "dataset_organization"
+    },
+    {
+      "field_name": "version",
+      "label": "Version",
+      "validators": "ignore_missing unicode package_version_validator",
+      "form_placeholder": "1.0",
+      "default": "1.0"
+    }
+  ],
+  "resource_fields": [
+    {
+      "field_name": "url",
+      "label": "URL",
+      "preset": "resource_url_upload"
+    },
+    {
+      "field_name": "name",
+      "label": "Name",
+      "form_placeholder": "eg. January 2011 Gold Prices"
+    },
+    {
+      "field_name": "description",
+      "label": "Description",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "Some useful notes about the data"
+    },
+    {
+      "field_name": "format",
+      "label": "Format",
+      "preset": "resource_format_autocomplete"
+    },
+    {
+      "field_name": "type",
+      "label": {
+        "he": "סוג",
+        "en_US": "Type"
+      },
+      "preset": "select",
+      "choices": [
+        {
+          "value": "screenshot",
+          "label": {
+            "he": "צילום מסך",
+            "en_US": "Screenshot"
+          }
+        },
+        {
+          "value": "video",
+          "label": {
+            "he": "סרטון הדגמה",
+            "en_US": "Demonstration Video"
+          }
+        },
+        {
+          "value": "specification",
+          "label": {
+            "he": "מסמך הגדרות לשימוש",
+            "en_US": "Specifications Document"
+          }
+        },
+        {
+          "value": "marketing",
+          "label": {
+            "he": "חומר שיווקי אחר",
+            "en_US": "Marketing Material"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -13,7 +13,7 @@ Includes ckanext-scheming schemas, to use, add the following to config:
 ```
 plugins = ... scheming_datasets scheming_groups
 
-scheming.dataset_schemas = ckanext.datacity:scheming-dataset.json
+scheming.dataset_schemas = ckanext.datacity:scheming-dataset.json ckanext.datacity:scheming-app.json
 scheming.group_schemas = ckanext.datacity:scheming-group-settings.json ckanext.datacity:scheming-group-automation.json
 
 datacity.settings_group_id = settings
