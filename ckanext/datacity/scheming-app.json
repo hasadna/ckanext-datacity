@@ -11,8 +11,8 @@
     {
       "field_name": "name",
       "label": "URL",
-      "preset": "app_slug",
-      "form_placeholder": "eg. my-aoo"
+      "preset": "dataset_slug",
+      "form_placeholder": "eg. my-app"
     },
     {
       "field_name": "notes",
