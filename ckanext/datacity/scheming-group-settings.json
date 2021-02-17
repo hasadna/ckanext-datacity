@@ -101,6 +101,14 @@
       "label": "Homepage groups inner text color"
     },
     {
+      "field_name": "homepage_datasets_background_color",
+      "label": "Homepage datasets background color"
+    },
+    {
+      "field_name": "homepage_datasets_text_color",
+      "label": "Homepage datasets text color"
+    },
+    {
       "field_name": "homepage_featured_packages_num",
       "label": "Homepage groups number of packages to display per component"
     },

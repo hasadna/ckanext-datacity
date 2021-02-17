@@ -117,7 +117,11 @@
       color: {{ h.color('homepage_title_text_color') }};
     }
     .homepage-datasets-top-container {
-      background-color: {{ h.color("top_header_background_color") }};
+      color: {{ h.color("homepage_datasets_text_color") }};
+      background-color: {{ h.color("homepage_datasets_background_color") }};
+    }
+    .homepage-datasets-top-container a {
+      color: {{ h.color("homepage_datasets_text_color") }};
     }
   </style>
 {% endblock %}

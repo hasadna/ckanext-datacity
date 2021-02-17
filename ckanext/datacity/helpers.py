@@ -55,7 +55,7 @@ def get_setting(setting, default=None):
 
 
 def get_color(color):
-    value = get_setting(color, {
+    default = {
         "top_header_background_color": "ffffff",
         "menu_background_color": "ffffff",
         "menu_text_color": "1c4f7c",
@@ -66,7 +66,10 @@ def get_color(color):
         "homepage_groups_inner_background_color": "ffffff",
         "homepage_groups_inner_text_color": "13699e",
         "footer_background_color": "1c4f7c",
-    }.get(color, "#000000"))
+        "homepage_datasets_background_color": lambda: get_color("top_header_background_color"),
+        "homepage_datasets_text_color": "#1c4f7c",
+    }.get(color, "#000000")
+    value = get_setting(color, default() if callable(default) else default)
     if not value.startswith("#"):
         value = "#" + value
     return value
