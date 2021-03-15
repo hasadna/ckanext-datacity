@@ -61,13 +61,15 @@ def get_color(color):
         "menu_text_color": "1c4f7c",
         "menu_highlight_color": "f1ae89",
         "homepage_title_text_color": "1c4f7c",
+        "homepage_title_background_color": lambda: get_color("menu_background_color"),
+        "homepage_title_border_color": "",
         "homepage_groups_background_color": "1c4f7c",
         "homepage_groups_text_color": "ffffff",
         "homepage_groups_inner_background_color": "ffffff",
         "homepage_groups_inner_text_color": "13699e",
         "footer_background_color": "1c4f7c",
         "homepage_datasets_background_color": lambda: get_color("top_header_background_color"),
-        "homepage_datasets_text_color": "#1c4f7c",
+        "homepage_datasets_text_color": "#1c4f7c"
     }.get(color, "#000000")
     value = get_setting(color, default() if callable(default) else default)
     if not value.startswith("#"):

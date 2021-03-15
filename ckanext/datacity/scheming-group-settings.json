@@ -73,6 +73,14 @@
       "label": "Homepage title text color"
     },
     {
+      "field_name": "homepage_title_background_color",
+      "label": "Homepage title background color"
+    },
+    {
+      "field_name": "homepage_title_border_color",
+      "label": "Homepage title border color (relevant for desktop/tablet browsers only)"
+    },
+    {
       "field_name": "homepage_title_text_line_1",
       "label": "Homepage title text line 1"
     },

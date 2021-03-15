@@ -18,6 +18,16 @@ body {
     padding: 70px 20px 30px;
 }
 
+@media (max-width: 768px) {
+   .homepage .module-search .module-content .heading {
+        width: 100%;
+        border-radius: initial;
+        margin: 0;
+        margin-bottom: 50px;
+        padding: 0;
+   }
+}
+
 .homepage .module-search {
     padding: 0;
 }
@@ -42,6 +52,16 @@ body {
 
 .search-form .search-input.search-giant {
     margin: 0 25%;
+}
+
+@media (max-width: 768px) {
+    .search-form .search-input.search-giant {
+        margin: 0;
+    }
+    [role=main] {
+        min-height: initial;
+        padding-bottom: 0;
+    }
 }
 
 .homepage .module-search .search-giant input {
@@ -100,6 +120,13 @@ body {
     text-align: center;
 }
 
+@media (max-width: 768px) {
+    .search-by-cat h3 {
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+}
+
 .surrey-media-grid {
 	margin: 0;
 	list-style: none;
@@ -124,6 +151,13 @@ body {
     margin-left: 13px;
     margin-right: 13px;
     margin-bottom: 22px;
+}
+
+@media (max-width: 768px) {
+    .surrey-media-item {
+        margin-left: 25%;
+        margin-right: 25%;
+    }
 }
 
 .surrey-media-item-wrap {
@@ -275,7 +309,6 @@ form.lang-select label {
 
 .dc-flex-navbar {
     display: flex;
-    flex-direction: row-reverse;
     align-items: center;
 }
 
@@ -323,6 +356,13 @@ form.lang-select label {
     flex-grow: 2;
 }
 
+@media (max-width: 768px) {
+    .dcfni-city-logo {
+        flex-basis: 0;
+        order: -1;
+    }
+}
+
 .dcfni-city-logo hgroup {
     text-align: right;
 }
@@ -333,9 +373,22 @@ form.lang-select label {
     flex-grow: 2;
 }
 
+@media (max-width: 768px) {
+    .dcfni-datacity-logo {
+        flex-basis: 0;
+        order: -2;
+    }
+}
+
 .footer-row {
     display: flex;
     margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .footer-row {
+        flex-direction: column;
+    }
 }
 
 .footer-col {
@@ -356,8 +409,23 @@ form.lang-select label {
     margin-left: 25px;
 }
 
+@media (max-width: 768px) {
+    .footer-col-iia {
+        text-align: initial;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
 .footer-col-iia div {
     margin-bottom: 35px;
+}
+
+@media (max-width: 768px) {
+    .footer-col-iia div {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
 }
 
 .footer-col-hasadna {
@@ -365,8 +433,21 @@ form.lang-select label {
     flex-grow: 1;
 }
 
+@media (max-width: 768px) {
+    .footer-col-hasadna {
+        text-align: initial;
+    }
+}
+
 .footer-col-hasadna div {
     margin-bottom: 35px;
+}
+
+@media (max-width: 768px) {
+    .footer-col-hasadna div {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
 }
 
 .footer-col-code div {
