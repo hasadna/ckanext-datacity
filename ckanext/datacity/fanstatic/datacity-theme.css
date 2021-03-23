@@ -493,3 +493,7 @@ form.lang-select label {
 .label[data-format*=csv] {
     background-color: #8F7000;
 }
+
+.btn-success {
+    background-color: #258340;
+}
