@@ -477,3 +477,19 @@ form.lang-select label {
     color: white;
     font-size: 14px;
 }
+
+.label[data-format] {
+    background-color: #707070;
+}
+
+.label[data-format=geojson] {
+    background-color: #8434da;
+}
+
+.label[data-format*=xls] {
+    background-color: #258340;
+}
+
+.label[data-format*=csv] {
+    background-color: #8F7000;
+}
