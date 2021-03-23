@@ -497,3 +497,7 @@ form.lang-select label {
 .btn-success {
     background-color: #258340;
 }
+
+.badge {
+    background-color: #707070;
+}
