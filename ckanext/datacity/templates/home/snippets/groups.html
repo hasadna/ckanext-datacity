@@ -3,7 +3,7 @@
     <ul class="surrey-media-grid">
         {% for group in h.homepage_groups() %}
         <li class="surrey-media-item">
-            <div class="surrey-media-item-wrap">
+            <div class="surrey-media-item-wrap" tabindex="0">
                 <a href="{{ h.url_for(controller='group', action='read', id=group.name) }}" title="{{ group.display_name }}">
                 <img src="{{ group.image_display_url }}" alt="{{ group.display_name }}" width="51" height="51">
                 <span>{{ group.display_name }}</span></a>
