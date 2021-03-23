@@ -2,7 +2,7 @@
     <div class="dcfn-item dcfni-datacity-logo">
         {% if h.setting('datacity_logo_url') %}
         <div>
-            <a class="logo" href="{{ h.url_for('home.index') }}"><img src="{{ h.setting('datacity_logo_url') }}" alt="{{ g.site_title }}" title="{{ g.site_title }}"/></a>
+            <a class="logo" href="{{ h.url_for('home.index') }}"><img src="{{ h.setting('datacity_logo_url') }}" alt="{{ _('Datacity Logo') }}" title="{{ _('Datacity Logo') }}"/></a>
         </div>
         {% endif %}
     </div>
@@ -17,7 +17,7 @@
     </div>
     <div class="dcfn-item dcfni-city-logo">
         <hgroup class="{{ g.header_class }}">
-            <a class="logo" href="{{ h.url_for('home.index') }}"><img src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="{{ g.site_title }}" title="{{ g.site_title }}"/></a>
+            <a class="logo" href="{{ h.url_for('home.index') }}"><img src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="{{ _('Municipality Logo') }}" title="{{ _('Municipality Logo') }}"/></a>
         </hgroup>
     </div>
 </div>
