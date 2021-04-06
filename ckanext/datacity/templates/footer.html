@@ -4,10 +4,10 @@
 <div class="footer-row">
   <div class="footer-col footer-col-site">
     {% if h.setting('footer_links_markdown_' + h.lang()) %}
-        {{ h.render_markdown(h.setting('footer_links_markdown_' + h.lang())) }}
+        {{ h.render_markdown(h.setting('footer_links_markdown_' + h.lang()), allow_html=True) }}
     {% elif h.setting('footer_links_markdown_he') %}
         <div dir="rtl">
-            {{ h.render_markdown(h.setting('footer_links_markdown_he')) }}
+            {{ h.render_markdown(h.setting('footer_links_markdown_he'), allow_html=True) }}
         </div>
     {% endif %}
     <ul class="list-unstyled">

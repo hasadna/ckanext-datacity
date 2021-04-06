@@ -131,19 +131,19 @@
     {
       "field_name":  "footer_links_markdown_he",
       "label": "Footer Links Markdown Hebrew",
-      "form_snippet": "footer_links_markdown.html",
+      "form_snippet": "footer_links_markdown_with_html.html",
       "form_placeholder": "* [קישור ראשון](https://www.example.com)\n* [קישור שני](https://www.example.com)"
     },
     {
       "field_name":  "footer_links_markdown_en_US",
       "label": "Footer Links Markdown English",
-      "form_snippet": "footer_links_markdown.html",
+      "form_snippet": "footer_links_markdown_with_html.html",
       "form_placeholder": "* [first link](https://www.example.com)\n* [second link](https://www.example.com)"
     },
     {
       "field_name":  "footer_links_markdown_ar",
       "label": "Footer Links Markdown Arabic",
-      "form_snippet": "footer_links_markdown.html",
+      "form_snippet": "footer_links_markdown_with_html.html",
       "form_placeholder": "* [الرابط الثاني](https://www.example.com)\n* [رابط واحد](https://www.example.com)"
     },
     {
