@@ -444,6 +444,12 @@ form.lang-select label {
         margin-top: 8px;
         margin-bottom: 8px;
     }
+    .footer-col-code {
+        border-bottom: 2px dashed #e5e5e5;
+        border-top: 2px dashed #e5e5e5;
+        padding-top: 16px;
+        margin-bottom: 8px;
+    }
 }
 
 .footer-col-code div {

@@ -137,5 +137,11 @@
     .homepage-datasets-top-container a {
       color: {{ h.color("homepage_datasets_text_color") }};
     }
+    @media (max-width: 768px) {
+      .footer-col-code {
+        border-bottom-color: {{ h.color("footer_separator_color") }};
+        border-top-color: {{ h.color("footer_separator_color") }};
+      }
+    }
   </style>
 {% endblock %}

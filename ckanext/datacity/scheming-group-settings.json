@@ -125,6 +125,10 @@
       "label": "Footer background color"
     },
     {
+      "field_name": "footer_separator_color",
+      "label": "Footer separator color"
+    },
+    {
       "field_name":  "footer_links_markdown_he",
       "label": "Footer Links Markdown Hebrew",
       "form_snippet": "footer_links_markdown.html",
