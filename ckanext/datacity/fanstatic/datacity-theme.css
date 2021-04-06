@@ -381,6 +381,12 @@ form.lang-select label {
     margin-top: 50px;
 }
 
+@media (min-width: 768px) {
+    .footer-row {
+        justify-content: space-between;
+    }
+}
+
 @media (max-width: 768px) {
     .footer-row {
         flex-direction: column;
@@ -388,10 +394,19 @@ form.lang-select label {
 }
 
 .footer-col {
-    flex-grow: 3;
     font-size: 14px;
     font-weight: bold;
     color: white;
+}
+
+@media (min-width: 768px) {
+    .footer-col {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .footer-col-site {
+        max-width: 40%;
+    }
 }
 
 .footer-col a {
@@ -400,9 +415,6 @@ form.lang-select label {
 
 .footer-col-iia {
     text-align: left;
-    flex-grow: 1;
-    margin-right: 25px;
-    margin-left: 25px;
 }
 
 @media (max-width: 768px) {
@@ -426,7 +438,6 @@ form.lang-select label {
 
 .footer-col-hasadna {
     text-align: center;
-    flex-grow: 1;
 }
 
 @media (max-width: 768px) {
