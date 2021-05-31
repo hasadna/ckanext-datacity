@@ -1,5 +1,13 @@
 {% ckan_extends %}
 
+{% block image %}
+    <div class="image organization-logo">
+        <a href="{{ url }}">
+            <img src="{{ organization.image_display_url or h.url_for_static('/base/images/placeholder-organization.png') }}" width="200" alt="{{ organization.name }}" />
+        </a>
+    </div>
+{% endblock %}
+
 {% block nums %}
     <div class="nums">
         <dl>

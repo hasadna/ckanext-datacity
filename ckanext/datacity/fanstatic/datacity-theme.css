@@ -294,6 +294,11 @@ div#content.container .row.wrapper {
     max-width: 200px;
 }
 
+.organization-logo img {
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .masthead .logo img {
     max-height: 80px;
 }
