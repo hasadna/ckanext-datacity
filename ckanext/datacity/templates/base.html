@@ -79,6 +79,9 @@
     .surrey-media-item-wrap {
       background-color: {{ h.color("homepage_groups_inner_background_color") }};
     }
+    .surrey-media-item-wrap:hover {
+      background-color: {{ h.color("homepage_groups_inner_hover_background_color") }};
+    }
     .surrey-media-item span {
       color: {{ h.color("homepage_groups_inner_text_color") }};
     }
@@ -136,6 +139,9 @@
     }
     .homepage-datasets-top-container a {
       color: {{ h.color("homepage_datasets_text_color") }};
+    }
+    .homepage-datasets-top-container .show-all-datasets-inner h3:hover {
+      background-color: {{ h.color("homepage_datasets_button_hover_background_color") }};
     }
     @media (max-width: 768px) {
       .footer-col-code {

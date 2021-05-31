@@ -66,9 +66,11 @@ def get_color(color):
         "homepage_groups_background_color": "1c4f7c",
         "homepage_groups_text_color": "ffffff",
         "homepage_groups_inner_background_color": "ffffff",
+        "homepage_groups_inner_hover_background_color": "d7d7d7",
         "homepage_groups_inner_text_color": "13699e",
         "footer_background_color": "1c4f7c",
         "homepage_datasets_background_color": lambda: get_color("top_header_background_color"),
+        "homepage_datasets_button_hover_background_color": "d7d7d7",
         "homepage_datasets_text_color": "#1c4f7c",
         "footer_separator_color": "#e5e5e5"
     }.get(color, "#000000")

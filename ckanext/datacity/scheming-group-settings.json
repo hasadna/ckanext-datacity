@@ -105,12 +105,20 @@
       "label": "Homepage groups inner background color"
     },
     {
+      "field_name": "homepage_groups_inner_hover_background_color",
+      "label": "Homepage groups inner hover background color"
+    },
+    {
       "field_name": "homepage_groups_inner_text_color",
       "label": "Homepage groups inner text color"
     },
     {
       "field_name": "homepage_datasets_background_color",
       "label": "Homepage datasets background color"
+    },
+    {
+      "field_name": "homepage_datasets_button_hover_background_color",
+      "label": "Homepage datasets button hover background color"
     },
     {
       "field_name": "homepage_datasets_text_color",

@@ -181,6 +181,7 @@ body {
 
 .surrey-media-item a {
     text-decoration: none;
+    text-align: center;
 }
 
 ul.surrey-media-grid {
@@ -224,6 +225,10 @@ ul.surrey-media-grid {
     font-size: 18px;
     font-weight: bold;
     padding-bottom: 20px;
+}
+
+.homepage-datasets-top-container .show-all-datasets-inner a:hover {
+    text-decoration: none;
 }
 
 .homepage-datasets-top-container .dataset-resources a {
