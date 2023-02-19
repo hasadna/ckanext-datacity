@@ -11,4 +11,4 @@ hostname = https://www.transifex.com
 password = $TRANSIFEX_API_TOKEN
 username = api
 " > ~/.transifexrc &&\
-/opt/push_source_translations/venv/bin/tx push -s
+tx push -s

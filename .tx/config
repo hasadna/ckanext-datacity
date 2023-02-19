@@ -1,8 +1,9 @@
 [main]
 host = https://www.transifex.com
 
-[datacity-ckan.ckanpot]
+[o:the-public-knowledge-workshop:p:datacity-ckan:r:ckanpot]
 file_filter = ckanext/datacity/i18n/<lang>/LC_MESSAGES/ckan-datacity.po
 source_file = ckanext/datacity/i18n/ckan-datacity.pot
 source_lang = en
-type = PO
+type        = PO
+
