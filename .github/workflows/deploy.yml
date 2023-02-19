@@ -20,7 +20,7 @@ jobs:
         else
           CACHE_FROM_ARG=""
         fi &&\
-        docker build $CACHE_FROM_ARG --build-arg VERSION=${GITHUB_SHA} -t "${PUSH_TRANSLATIONS_IMAGE}" . &&\
+        docker build $CACHE_FROM_ARG --build-arg VERSION=${GITHUB_SHA} -t "${PUSH_TRANSLATIONS_IMAGE}" bin/push_source_translations &&\
         docker push "${PUSH_TRANSLATIONS_IMAGE}" &&\
         docker run -v $(pwd):/opt/ckanext-datacity -e TRANSIFEX_API_TOKEN "${PUSH_TRANSLATIONS_IMAGE}" &&\
         if ! git log -1 --pretty=format:"%s" | grep -- --no-deploy; then
