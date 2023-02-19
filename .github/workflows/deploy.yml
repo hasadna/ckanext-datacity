@@ -11,9 +11,18 @@ jobs:
     - env:
         HASADNA_CKAN_CLOUD_DOCKER_DEPLOY_KEY: ${{ secrets.HASADNA_CKAN_CLOUD_DOCKER_DEPLOY_KEY }}
         TRANSIFEX_API_TOKEN: ${{ secrets.TRANSIFEX_API_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PUSH_TRANSLATIONS_IMAGE: "ghcr.io/hasadna/ckanext-datacity/push-translations:latest"
       run: |
-        docker pull datacity/ckanext-datacity-push-source-translations &&\
-        docker run -v $(pwd):/opt/ckanext-datacity -e TRANSIFEX_API_TOKEN datacity/ckanext-datacity-push-source-translations &&\
+        echo "${GITHUB_TOKEN}" | docker login ghcr.io -u hasadna --password-stdin &&\
+        if docker pull "${PUSH_TRANSLATIONS_IMAGE}"; then
+          CACHE_FROM_ARG="--cache-from ${PUSH_TRANSLATIONS_IMAGE}"
+        else
+          CACHE_FROM_ARG=""
+        fi &&\
+        docker build $CACHE_FROM_ARG --build-arg VERSION=${GITHUB_SHA} -t "${PUSH_TRANSLATIONS_IMAGE}" . &&\
+        docker push "${PUSH_TRANSLATIONS_IMAGE}" &&\
+        docker run -v $(pwd):/opt/ckanext-datacity -e TRANSIFEX_API_TOKEN "${PUSH_TRANSLATIONS_IMAGE}" &&\
         if ! git log -1 --pretty=format:"%s" | grep -- --no-deploy; then
           cd `mktemp -d` &&\
           echo "${HASADNA_CKAN_CLOUD_DOCKER_DEPLOY_KEY}" > deploy_key &&\
