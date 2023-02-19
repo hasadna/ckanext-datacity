@@ -13,4 +13,4 @@ password      = $TRANSIFEX_API_TOKEN
 rest_hostname = https://rest.api.transifex.com
 token         = $TRANSIFEX_API_TOKEN
 " > ~/.transifexrc &&\
-tx push -s
+/tx push -s
