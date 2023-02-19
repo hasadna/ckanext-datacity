@@ -31,7 +31,7 @@ body {
     padding: 0;
 }
 
-.homepage .module-search h3.heading {
+.homepage .module-search h1.heading {
     font-weight: bold;
     font-size: 40px;
 }
@@ -58,6 +58,14 @@ body {
         margin: 0;
     }
     [role=main] {
+        min-height: initial;
+        padding-bottom: 0;
+    }
+    .search-by-cat-top-container {
+        min-height: initial;
+        padding-bottom: 0;
+    }
+    .homepage-datasets-top-container {
         min-height: initial;
         padding-bottom: 0;
     }
@@ -271,6 +279,14 @@ ul.nav-facet li.nav-item {
 }
 
 .homepage [role=main] {
+    padding-top: 0;
+}
+
+.homepage .search-by-cat-top-container {
+    padding-top: 0;
+}
+
+.homepage .homepage-datasets-top-container {
     padding-top: 0;
 }
 
@@ -530,4 +546,13 @@ form.lang-select label {
 
 section.additional-info a,div.module-content table a {
     color: #3d3dff;
+}
+
+.empty {
+    color: #333;
+    font-style: italic;
+}
+
+.activity .item .date {
+    color: #333;
 }

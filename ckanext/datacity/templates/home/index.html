@@ -1,5 +1,13 @@
 {% ckan_extends %}
 
+{%- block title -%}
+  {%- if h.setting('homepage_override_title_'+h.lang()) -%}
+    {{ h.setting('homepage_override_title_'+h.lang()) }}
+  {% else  %}
+    {{ super() }}
+  {% endif %}
+{%- endblock -%}
+
 {% block primary_content %}
   {% snippet "home/layout-datacity.html" %}
 {% endblock %}

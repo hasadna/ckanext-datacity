@@ -127,3 +127,7 @@ def get_last_updated_datasets():
         "sort": "metadata_modified desc",
         "rows": int(get_setting("homepage_featured_packages_num", "3")),
     })["results"]
+
+
+def gravatar_accessibility(html):
+    return html.replace('alt="Gravatar"', 'alt=""')

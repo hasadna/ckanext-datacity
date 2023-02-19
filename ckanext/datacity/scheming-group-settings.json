@@ -29,6 +29,18 @@
       "label": "Site Title Arabic"
     },
     {
+      "field_name": "homepage_override_title_he",
+      "label": "Override Homepage Site Title Hebrew"
+    },
+    {
+      "field_name": "homepage_override_title_en_US",
+      "label": "Override Homepage Site Title English"
+    },
+    {
+      "field_name": "homepage_override_title_ar",
+      "label": "Override Homepage Site Title Arabic"
+    },
+    {
       "field_name": "site_sharing_image_url",
       "label": "Sharing image URL",
       "help_text": "Image should be 256px X 256px and less then 300KB"

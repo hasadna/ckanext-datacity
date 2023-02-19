@@ -24,6 +24,7 @@ class DatacityPlugin(plugins.SingletonPlugin):
             "homepage_groups": helpers.get_homepage_groups,
             "popular_datasets": helpers.get_popular_datasets,
             "last_updated_datasets": helpers.get_last_updated_datasets,
+            "gravatar_accessibility": helpers.gravatar_accessibility,
         }
 
     def read(self, entity):
