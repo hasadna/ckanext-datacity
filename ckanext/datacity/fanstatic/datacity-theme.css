@@ -520,6 +520,10 @@ form.lang-select label {
     font-size: 14px;
 }
 
+form.lang-select select {
+    color: #1c4f7c;
+}
+
 .label[data-format] {
     background-color: #707070;
 }

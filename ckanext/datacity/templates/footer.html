@@ -14,12 +14,10 @@
       <li><a href="{{ h.url_for(controller='home', action='about') }}">{{ _('About {0}').format(h.setting('site_title_'+h.lang(), h.setting('site_title_he', g.site_title))) }}</a></li>
     </ul>
     <div class="row">
-      <div class="col-md-6">
-  {% if false %}
-    {% block footer_lang %}
-      {% snippet "snippets/language_selector.html" %}
-    {% endblock %}
-  {% endif %}
+      <div class="col-md-8">
+            {% block footer_lang %}
+              {% snippet "snippets/language_selector.html" %}
+            {% endblock %}
         </div>
     </div>
   </div>

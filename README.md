@@ -133,7 +133,7 @@ Activate the local development server with the relevant CKAN version (following 
 Install translation requirements
 
 ```
-pip install --upgrade Babel transifex-client
+pip install --upgrade Babel
 ```
 
 Update the .pot files
@@ -149,6 +149,8 @@ Merge the .pot files
 msgcat venv/src/ckan/ckan/i18n/ckan.pot ckanext/datacity/i18n/ckanext-datacity.pot > ckanext/datacity/i18n/ckan-datacity.pot
 ```
 
+Install Transifex CLI client - https://developers.transifex.com/docs/cli
+
 Get a Transifex API token
 
 ```
@@ -159,10 +161,12 @@ Set transifex auth file
 
 ```
 echo "[https://www.transifex.com]
-api_hostname = https://api.transifex.com
-hostname = https://www.transifex.com
-password = $TRANSIFEX_API_TOKEN
-username = api
+api_hostname  = https://api.transifex.com
+hostname      = https://www.transifex.com
+username      = api
+password      = ${TRANSIFEX_API_TOKEN}
+rest_hostname = https://rest.api.transifex.com
+token         = ${TRANSIFEX_API_TOKEN}
 " > ~/.transifexrc
 ```
 
