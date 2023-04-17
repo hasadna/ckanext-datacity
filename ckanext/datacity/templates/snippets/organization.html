@@ -8,6 +8,11 @@
     </div>
 {% endblock %}
 
+{% block heading %}
+    {% do h.update_organization_lang(organization) %}
+    {{ super() }}
+{% endblock %}
+
 {% block nums %}
     <div class="nums">
         <dl>

@@ -9,6 +9,16 @@
       "form_placeholder": "eg. A descriptive title"
     },
     {
+      "field_name": "title_ar",
+      "label": "Title (Arabic)",
+      "display_snippet": null
+    },
+    {
+      "field_name": "title_en",
+      "label": "Title (English)",
+      "display_snippet": null
+    },
+    {
       "field_name": "name",
       "label": "URL",
       "preset": "dataset_slug",
@@ -19,6 +29,16 @@
       "label": "Description",
       "form_snippet": "markdown.html",
       "form_placeholder": "eg. Some useful notes about the data"
+    },
+    {
+      "field_name": "notes_ar",
+      "label": "Description (Arabic)",
+      "form_snippet": "markdown.html"
+    },
+    {
+      "field_name": "notes_en",
+      "label": "Description (English)",
+      "form_snippet": "markdown.html"
     },
     {
       "field_name": "tag_string",
@@ -54,7 +74,31 @@
     },
     {
       "field_name": "author",
-      "label": "Author",
+      "label": {
+        "en_US": "Author (Hebrew)",
+        "he": "מחבר (עברית)",
+        "ar": "مؤلف (عبري)"
+      },
+      "form_placeholder": "Joe Bloggs",
+      "display_property": "dc:creator"
+    },
+    {
+      "field_name": "author_ar",
+      "label": {
+        "en_US": "Author (Arabic)",
+        "he": "מחבר (ערבית)",
+        "ar": "مؤلف (ارابيا)"
+      },
+      "form_placeholder": "Joe Bloggs",
+      "display_property": "dc:creator"
+    },
+    {
+      "field_name": "author_en",
+      "label": {
+        "en_US": "Author (English)",
+        "he": "מחבר (אנגלית)",
+        "ar": "مؤلف (آدمية)"
+      },
       "form_placeholder": "Joe Bloggs",
       "display_property": "dc:creator"
     },
@@ -68,7 +112,31 @@
     },
     {
       "field_name": "maintainer",
-      "label": "Maintainer",
+      "label": {
+        "en_US": "Maintainer (Hebrew)",
+        "he": "אחראי (עברית)",
+        "ar": "عامل صيانة (عبري)"
+      },
+      "form_placeholder": "Joe Bloggs",
+      "display_property": "dc:contributor"
+    },
+    {
+      "field_name": "maintainer_ar",
+      "label": {
+        "en_US": "Maintainer (Arabic)",
+        "he": "אחראי (ערבית)",
+        "ar": "عامل صيانة (ارابيا)"
+      },
+      "form_placeholder": "Joe Bloggs",
+      "display_property": "dc:contributor"
+    },
+    {
+      "field_name": "maintainer_en",
+      "label": {
+        "en_US": "Maintainer (English)",
+        "he": "אחראי (אנגלית)",
+        "ar": "عامل صيانة (آدمية)"
+      },
       "form_placeholder": "Joe Bloggs",
       "display_property": "dc:contributor"
     },
@@ -84,7 +152,8 @@
       "field_name": "update_period",
       "label": {
         "en_US": "Update Period",
-        "he": "תדירות עדכון"
+        "he": "תדירות עדכון",
+        "ar": "فترة التحديث"
       },
       "preset": "select",
       "choices": [
@@ -92,56 +161,72 @@
           "value": "online",
           "label": {
             "en_US": "Online",
-            "he": "באופן מיידי"
+            "he": "באופן מיידי",
+            "ar": "في الحال"
           }
         },
         {
           "value": "near_real_time",
           "label": {
             "en_US": "Near real time",
-            "he": "כמעט באופן מיידי"
+            "he": "כמעט באופן מיידי",
+            "ar": "قرب الوقت الحقيقي"
           }
         },
         {
           "value": "hourly",
           "label": {
-            "he": "אחת לשעה"
+            "en_US": "Hourly",
+            "he": "אחת לשעה",
+            "ar": "ساعيا"
           }
         },
         {
           "value": "daily",
           "label": {
-            "he": "אחת ליום"
+            "en_US": "Daily",
+            "he": "אחת ליום",
+            "ar": "يوميًا"
           }
         },
         {
           "value": "weekly",
           "label": {
-            "he": "אחת לשבוע"
+            "en_US": "Weekly",
+            "he": "אחת לשבוע",
+            "ar": "أسبوعي"
           }
         },
         {
           "value": "monthly",
           "label": {
-            "he": "אחת לחודש"
+            "en_US": "Monthly",
+            "he": "אחת לחודש",
+            "ar": "شهريا"
           }
         },
         {
           "value": "quarterly",
           "label": {
-            "he": "אחת לרבעון"
+            "en_US": "Quarterly",
+            "he": "אחת לרבעון",
+            "ar": "ربعي"
           }
         },
         {
           "value": "yearly",
           "label": {
-            "he": "אחת לשנה"
+            "en_US": "Yearly",
+            "he": "אחת לשנה",
+            "ar": "سنوي"
           }
         },
         {
           "value": "manually",
           "label": {
-            "he": "לפי צורך / באופן ייזום"
+            "en_US": "Manually",
+            "he": "לפי צורך / באופן ייזום",
+            "ar": "يدويا"
           }
         }
       ]
@@ -159,8 +244,30 @@
       "form_placeholder": "eg. January 2011 Gold Prices"
     },
     {
+      "field_name": "name_ar",
+      "label": "Name (Arabic)",
+      "form_placeholder": "eg. January 2011 Gold Prices"
+    },
+    {
+      "field_name": "name_en",
+      "label": "Name (English)",
+      "form_placeholder": "eg. January 2011 Gold Prices"
+    },
+    {
       "field_name": "description",
       "label": "Description",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "Some useful notes about the data"
+    },
+    {
+      "field_name": "description_ar",
+      "label": "Description (Arabic)",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "Some useful notes about the data"
+    },
+    {
+      "field_name": "description_en",
+      "label": "Description (English)",
       "form_snippet": "markdown.html",
       "form_placeholder": "Some useful notes about the data"
     },
@@ -173,7 +280,8 @@
       "field_name": "type",
       "label": {
         "he": "סוג",
-        "en_US": "Type"
+        "en_US": "Type",
+        "ar": "يكتب"
       },
       "preset": "select",
       "choices": [
@@ -181,14 +289,16 @@
           "value": "table",
           "label": {
             "he": "טבלה",
-            "en_US": "Table"
+            "en_US": "Table",
+            "ar": "طاولة"
           }
         },
         {
           "value": "map",
           "label": {
             "he": "מפה",
-            "en_US": "Map"
+            "en_US": "Map",
+            "ar": "خريطة"
           }
         }
       ]
@@ -197,21 +307,24 @@
       "field_name": "years",
       "label": {
         "he": "לאילו שנים מתייחסים הנתונים",
-        "en_US": "Years"
+        "en_US": "Years",
+        "ar": "سنين"
       }
     },
     {
       "field_name": "geo_lat_field",
       "label": {
         "he": "מידע גאוגרפי: עמודת lat",
-        "en_US": "Geo data: lat column"
+        "en_US": "Geo data: lat column",
+        "ar": "البيانات الجغرافية: lat"
       }
     },
     {
       "field_name": "geo_lon_field",
       "label": {
         "he": "מידע גאוגרפי: עמודת lon",
-        "en_US": "Geo data: lon column"
+        "en_US": "Geo data: lon column",
+        "ar": "البيانات الجغرافية: lon"
       }
     }
   ]
