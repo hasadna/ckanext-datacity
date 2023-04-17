@@ -108,12 +108,15 @@ Get the Transifex API token
 TRANSIFEX_API_TOKEN=
 ```
 
+Install [Transifex Client](https://docs.transifex.com/client/installing-the-client)
+
 Get the translations and copy to the local CKAN source
 
 ```
 for LANG in he ar en_US; do
     echo downloading $LANG &&\
-    curl -sL --user api:$TRANSIFEX_API_TOKEN -X GET "https://www.transifex.com/api/2/project/datacity-ckan/resource/ckanpot/translation/$LANG/?mode=default&file" > venv/src/ckan/ckan/i18n/$LANG/LC_MESSAGES/ckan.po &&\
+    tx pull -tl $LANG &&
+    mv ckanext/datacity/i18n/$LANG/LC_MESSAGES/ckan-datacity.po venv/src/ckan/ckan/i18n/$LANG/LC_MESSAGES/ckan.po &&\
     echo compiling $LANG &&\
     msgfmt -o venv/src/ckan/ckan/i18n/$LANG/LC_MESSAGES/ckan.mo venv/src/ckan/ckan/i18n/$LANG/LC_MESSAGES/ckan.po &&\
     echo OK
