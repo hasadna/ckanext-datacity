@@ -11,12 +11,14 @@
     {
       "field_name": "title_ar",
       "label": "Title (Arabic)",
-      "display_snippet": null
+      "display_snippet": null,
+      "lang_support": "arabic"
     },
     {
       "field_name": "title_en",
       "label": "Title (English)",
-      "display_snippet": null
+      "display_snippet": null,
+      "lang_support": "english"
     },
     {
       "field_name": "name",
@@ -33,12 +35,14 @@
     {
       "field_name": "notes_ar",
       "label": "Description (Arabic)",
-      "form_snippet": "markdown.html"
+      "form_snippet": "markdown.html",
+      "lang_support": "arabic"
     },
     {
       "field_name": "notes_en",
       "label": "Description (English)",
-      "form_snippet": "markdown.html"
+      "form_snippet": "markdown.html",
+      "lang_support": "english"
     },
     {
       "field_name": "tag_string",
@@ -90,7 +94,8 @@
         "ar": "مؤلف (ارابيا)"
       },
       "form_placeholder": "Joe Bloggs",
-      "display_property": "dc:creator"
+      "display_property": "dc:creator",
+      "lang_support": "arabic"
     },
     {
       "field_name": "author_en",
@@ -100,7 +105,8 @@
         "ar": "مؤلف (آدمية)"
       },
       "form_placeholder": "Joe Bloggs",
-      "display_property": "dc:creator"
+      "display_property": "dc:creator",
+      "lang_support": "english"
     },
     {
       "field_name": "author_email",
@@ -128,7 +134,8 @@
         "ar": "عامل صيانة (ارابيا)"
       },
       "form_placeholder": "Joe Bloggs",
-      "display_property": "dc:contributor"
+      "display_property": "dc:contributor",
+      "lang_support": "arabic"
     },
     {
       "field_name": "maintainer_en",
@@ -138,7 +145,8 @@
         "ar": "عامل صيانة (آدمية)"
       },
       "form_placeholder": "Joe Bloggs",
-      "display_property": "dc:contributor"
+      "display_property": "dc:contributor",
+      "lang_support": "english"
     },
     {
       "field_name": "maintainer_email",
@@ -246,12 +254,16 @@
     {
       "field_name": "name_ar",
       "label": "Name (Arabic)",
-      "form_placeholder": "eg. January 2011 Gold Prices"
+      "form_placeholder": "eg. January 2011 Gold Prices",
+      "display_snippet": null,
+      "lang_support": "arabic"
     },
     {
       "field_name": "name_en",
       "label": "Name (English)",
-      "form_placeholder": "eg. January 2011 Gold Prices"
+      "form_placeholder": "eg. January 2011 Gold Prices",
+      "display_snippet": null,
+      "lang_support": "english"
     },
     {
       "field_name": "description",
@@ -263,13 +275,17 @@
       "field_name": "description_ar",
       "label": "Description (Arabic)",
       "form_snippet": "markdown.html",
-      "form_placeholder": "Some useful notes about the data"
+      "form_placeholder": "Some useful notes about the data",
+      "display_snippet": null,
+      "lang_support": "arabic"
     },
     {
       "field_name": "description_en",
       "label": "Description (English)",
       "form_snippet": "markdown.html",
-      "form_placeholder": "Some useful notes about the data"
+      "form_placeholder": "Some useful notes about the data",
+      "display_snippet": null,
+      "lang_support": "english"
     },
     {
       "field_name": "format",

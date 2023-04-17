@@ -188,3 +188,27 @@ def get_dataset_name_lang(dataset, name):
         return name
     else:
         return get_action('package_show')(data_dict={'id': dataset['name']}).get('title_{}'.format(lng), name)
+
+
+def filter_enabled_locales(locales):
+    for locale in locales:
+        if locale.identifier == 'he':
+            yield locale
+        elif locale.identifier == 'en_US':
+            if get_setting('english_language_support') == 'yes':
+                yield locale
+        elif locale.identifier == 'ar':
+            if get_setting('arabic_language_support') == 'yes':
+                yield locale
+
+
+def is_scheming_field_lang_support_enabled(field):
+    if field.get('lang_support'):
+        if field['lang_support'] == 'english':
+            return get_setting('english_language_support') == 'yes'
+        elif field['lang_support'] == 'arabic':
+            return get_setting('arabic_language_support') == 'yes'
+        else:
+            return False
+    else:
+        return True

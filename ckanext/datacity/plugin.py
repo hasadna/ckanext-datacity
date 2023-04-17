@@ -31,6 +31,8 @@ class DatacityPlugin(plugins.SingletonPlugin):
             "get_group_display_name_lang": helpers.get_group_display_name_lang,
             "get_group_description_lang": helpers.get_group_description_lang,
             "get_dataset_name_lang": helpers.get_dataset_name_lang,
+            'filter_enabled_locales': helpers.filter_enabled_locales,
+            "is_scheming_field_lang_support_enabled": helpers.is_scheming_field_lang_support_enabled,
         }
 
     def read(self, entity):

@@ -13,11 +13,13 @@
     },
     {
       "field_name": "title_ar",
-      "label": "Name (Arabic)"
+      "label": "Name (Arabic)",
+      "lang_support": "arabic"
     },
     {
       "field_name": "title_en",
-      "label": "Name (English)"
+      "label": "Name (English)",
+      "lang_support": "english"
     },
     {
       "field_name": "name",
@@ -36,13 +38,15 @@
       "field_name": "description_ar",
       "label": "Description (Arabic)",
       "form_snippet": "markdown.html",
-      "form_placeholder": "A little information about my organization..."
+      "form_placeholder": "A little information about my organization...",
+      "lang_support": "arabic"
     },
     {
       "field_name": "description_en",
       "label": "Description (English)",
       "form_snippet": "markdown.html",
-      "form_placeholder": "A little information about my organization..."
+      "form_placeholder": "A little information about my organization...",
+      "lang_support": "english"
     },
     {
       "field_name": "url",

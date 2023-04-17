@@ -1,5 +1,6 @@
 {% import 'macros/form.html' as form %}
 
+{% if h.is_scheming_field_lang_support_enabled(field) %}
 {% call form.markdown(
     field.field_name,
     id='field-' + field.field_name,
@@ -16,3 +17,4 @@
         <li><strong>Pay attention that links must be defined as a markdown list, see the placeholder text for example</strong></li>
     </ul></div>
 {% endcall %}
+{% endif %}
