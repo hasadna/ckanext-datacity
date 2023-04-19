@@ -97,10 +97,19 @@ class DatacityPlugin(plugins.SingletonPlugin):
         # print('-----------')
         return pkg_dict
 
+    def before_create(self, context, resource):
+        pass
+
     def after_create(self, context, pkg_dict):
         pass
 
+    def before_update(self, context, current, resource):
+        pass
+
     def after_update(self, context, pkg_dict):
+        pass
+
+    def before_delete(self, context, resource, resources):
         pass
 
     def after_delete(self, context, pkg_dict):
