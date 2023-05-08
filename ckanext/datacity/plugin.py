@@ -33,6 +33,7 @@ class DatacityPlugin(plugins.SingletonPlugin):
             "get_dataset_name_lang": helpers.get_dataset_name_lang,
             'filter_enabled_locales': helpers.filter_enabled_locales,
             "is_scheming_field_lang_support_enabled": helpers.is_scheming_field_lang_support_enabled,
+            "get_short_lang": helpers.get_short_lang,
         }
 
     def read(self, entity):

@@ -1,0 +1,5 @@
+{% if h.get_short_lang() == 'he' and h.setting('arabic_language_support') == 'yes' %}
+    <li><a href="{% url_for h.current_url(), locale="ar" %}">العربية</a></li>
+{% elif h.get_short_lang() != 'he' %}
+    <li><a href="{% url_for h.current_url(), locale="he" %}">עברית</a></li>
+{% endif %}
