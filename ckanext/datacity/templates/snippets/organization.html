@@ -10,7 +10,11 @@
 
 {% block heading %}
     {% do h.update_organization_lang(organization) %}
-    {{ super() }}
+      <h2 class="heading" style="margin-top:0">{{ organization.title or organization.name }}
+        {% if organization.state == 'deleted' %}
+          [{{ _('Deleted') }}]
+        {% endif %}
+      </h2>
 {% endblock %}
 
 {% block nums %}

@@ -303,10 +303,6 @@ div#content.container .row.wrapper {
     border-top: 1px solid #dddddd;
 }
 
-.module-content.sidebar-helper {
-    color: #7E8489;
-}
-
 .page-header {
     background-color: transparent;
 }
@@ -559,4 +555,12 @@ section.additional-info a,div.module-content table a {
 
 .activity .item .date {
     color: #333;
+}
+
+.media-item span.count {
+    color: black;
+}
+
+.hide-heading {
+    display: block;
 }

@@ -83,7 +83,7 @@ within_tertiary
                 {% endif %}
               </p>
             {% else %}
-              <p class="module-content empty">{{ _('There are no {facet_type} that match this search').format(facet_type=title) }}</p>
+              <p class="module-content empty" tabindex="0">{{ _('There are no {facet_type} that match this search').format(facet_type=title) }}</p>
             {% endif %}
             {% endwith %}
           {% endblock %}

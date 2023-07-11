@@ -47,4 +47,11 @@
     <img src="{{ h.url_for_static('logoInnovationAuthority.png') }}" alt="Innovation Authority Logo"/>
   </div>
 </div>
+<script>
+    ['h1', 'h2', 'h3'].forEach(function(selector) {
+      document.querySelectorAll(selector).forEach(function(elt){
+          elt.setAttribute('tabindex', '0');
+      });
+    });
+</script>
 {% endblock %}
