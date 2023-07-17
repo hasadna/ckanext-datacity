@@ -10,11 +10,11 @@
 
 {% block heading %}
     {% do h.update_organization_lang(organization) %}
-      <h2 class="heading" style="margin-top:0">{{ organization.title or organization.name }}
+      <h{% if has_context_title %}2{% else %}1{% endif %} class="heading" style="margin-top:0">{{ organization.title or organization.name }}
         {% if organization.state == 'deleted' %}
           [{{ _('Deleted') }}]
         {% endif %}
-      </h2>
+      </h{% if has_context_title %}2{% else %}1{% endif %}>
 {% endblock %}
 
 {% block nums %}
