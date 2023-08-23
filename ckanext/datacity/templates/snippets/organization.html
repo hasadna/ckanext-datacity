@@ -3,9 +3,18 @@
 {% block image %}
     <div class="image organization-logo">
         <a href="{{ url }}">
-            <img src="{{ organization.image_display_url or h.url_for_static('/base/images/placeholder-organization.png') }}" width="200" alt="{{ organization.name }}" />
+            <img src="{{ organization.image_display_url or h.url_for_static('/base/images/placeholder-organization.png') }}" width="200" alt="{{ organization.title }}" title="{{ organization.title }}" />
         </a>
     </div>
+{% endblock %}
+
+{% block heading %}
+    {% do h.update_organization_lang(organization) %}
+      <h{% if has_context_title %}2{% else %}1{% endif %} class="heading" style="margin-top:0">{{ organization.title or organization.name }}
+        {% if organization.state == 'deleted' %}
+          [{{ _('Deleted') }}]
+        {% endif %}
+      </h{% if has_context_title %}2{% else %}1{% endif %}>
 {% endblock %}
 
 {% block nums %}

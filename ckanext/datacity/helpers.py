@@ -131,3 +131,84 @@ def get_last_updated_datasets():
 
 def gravatar_accessibility(html):
     return html.replace('alt="Gravatar"', 'alt=""')
+
+
+def get_short_lang():
+    return {
+        'en_US': 'en',
+        'ar': 'ar'
+    }.get(lang(), 'he')
+
+
+def update_organization_lang(organization):
+    lng = get_short_lang()
+    if organization.get('title_' + lng):
+        organization['title'] = organization['title_' + lng]
+    if organization.get('description_' + lng):
+        organization['description'] = organization['description_' + lng]
+
+
+def get_facet_list_items(name, items):
+    lng = get_short_lang()
+    if lng != 'he':
+        if name in ('organization', 'groups'):
+            for item in items:
+                org_id = item.get('name')
+                if org_id:
+                    org = get_action('{}_show'.format(name if name == 'organization' else 'group'))(data_dict={
+                        'id': org_id
+                    })
+                    title_lang = org.get('title_{}'.format(lng))
+                    if title_lang:
+                        item['display_name'] = title_lang
+    # print(name)
+    # print(items)
+    return items
+
+
+def get_group_display_name_lang(group, display_name):
+    lng = get_short_lang()
+    if lng == 'he':
+        return display_name
+    else:
+        return get_action('group_show')(data_dict={'id': group['name']}).get('title_{}'.format(lng), display_name)
+
+
+def get_group_description_lang(group, description):
+    lng = get_short_lang()
+    if lng == 'he':
+        return description
+    else:
+        return get_action('group_show')(data_dict={'id': group['name']}).get('description_{}'.format(lng), description)
+
+
+def get_dataset_name_lang(dataset, name):
+    lng = get_short_lang()
+    if lng == 'he':
+        return name
+    else:
+        return get_action('package_show')(data_dict={'id': dataset['name']}).get('title_{}'.format(lng), name)
+
+
+def filter_enabled_locales(locales):
+    for locale in locales:
+        if locale.identifier == 'he':
+            yield locale
+        elif locale.identifier == 'en_US':
+            if get_setting('english_language_support') == 'yes':
+                yield locale
+        elif locale.identifier == 'ar':
+            if get_setting('arabic_language_support') == 'yes':
+                yield locale
+
+
+def is_scheming_field_lang_support_enabled(field):
+    if field.get('lang_support'):
+        if field['lang_support'] == 'english':
+            return get_setting('english_language_support') == 'yes'
+        elif field['lang_support'] == 'arabic':
+            return get_setting('arabic_language_support') == 'yes'
+        else:
+            return False
+    else:
+        return True

@@ -11,3 +11,11 @@
 
 {% block follow %}
 {% endblock %}
+
+{% block image %}
+    <div class="image">
+      <a href="{{ group.url }}">
+        <img src="{{ group.image_display_url or h.url_for_static('/base/images/placeholder-group.png') }}" width="190" height="118" alt="{{ group.title }}" />
+      </a>
+    </div>
+{% endblock %}

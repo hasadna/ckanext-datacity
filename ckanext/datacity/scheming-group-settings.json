@@ -22,11 +22,13 @@
     },
     {
       "field_name": "site_title_en_US",
-      "label": "Site Title English"
+      "label": "Site Title English",
+      "lang_support": "english"
     },
     {
       "field_name": "site_title_ar",
-      "label": "Site Title Arabic"
+      "label": "Site Title Arabic",
+      "lang_support": "arabic"
     },
     {
       "field_name": "homepage_override_title_he",
@@ -34,11 +36,13 @@
     },
     {
       "field_name": "homepage_override_title_en_US",
-      "label": "Override Homepage Site Title English"
+      "label": "Override Homepage Site Title English",
+      "lang_support": "english"
     },
     {
       "field_name": "homepage_override_title_ar",
-      "label": "Override Homepage Site Title Arabic"
+      "label": "Override Homepage Site Title Arabic",
+      "lang_support": "arabic"
     },
     {
       "field_name": "site_sharing_image_url",
@@ -158,13 +162,15 @@
       "field_name":  "footer_links_markdown_en_US",
       "label": "Footer Links Markdown English",
       "form_snippet": "footer_links_markdown_with_html.html",
-      "form_placeholder": "* [first link](https://www.example.com)\n* [second link](https://www.example.com)"
+      "form_placeholder": "* [first link](https://www.example.com)\n* [second link](https://www.example.com)",
+      "lang_support": "english"
     },
     {
       "field_name":  "footer_links_markdown_ar",
       "label": "Footer Links Markdown Arabic",
       "form_snippet": "footer_links_markdown_with_html.html",
-      "form_placeholder": "* [الرابط الثاني](https://www.example.com)\n* [رابط واحد](https://www.example.com)"
+      "form_placeholder": "* [الرابط الثاني](https://www.example.com)\n* [رابط واحد](https://www.example.com)",
+      "lang_support": "arabic"
     },
     {
       "field_name": "about_markdown_he",
@@ -174,17 +180,29 @@
     {
       "field_name": "about_markdown_en_US",
       "label" : "About Markdown English",
-      "form_snippet": "markdown.html"
+      "form_snippet": "markdown.html",
+      "lang_support": "english"
     },
     {
       "field_name": "about_markdown_ar",
       "label" : "About Markdown Arabic",
-      "form_snippet": "markdown.html"
+      "form_snippet": "markdown.html",
+      "lang_support": "arabic"
     },
     {
       "field_name": "google_analytics_tracking_id",
       "label" : "Google Analytics Tracking ID",
       "help_text": "Get it from Google Analytics > Admin > Tracking Info > Tracking Code"
+    },
+    {
+      "field_name": "arabic_language_support",
+      "label": "Arabic language support",
+      "preset": "select", "choices": [{"value": "no", "label": "No"}, {"value": "yes", "label": "Yes"}]
+    },
+    {
+      "field_name": "english_language_support",
+      "label": "English language support",
+      "preset": "select", "choices": [{"value": "no", "label": "No"}, {"value": "yes", "label": "Yes"}]
     }
   ]
 }

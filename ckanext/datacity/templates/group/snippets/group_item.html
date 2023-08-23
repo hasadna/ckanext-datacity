@@ -1,0 +1,15 @@
+{% ckan_extends %}
+
+{% block title %}
+    <h3 class="media-heading">{{ h.get_group_display_name_lang(group, group.display_name) }}</h3>
+{% endblock %}
+
+{% block description %}
+    {% if group.description %}
+      <p>{{ h.markdown_extract(h.get_group_description_lang(group, group.description), extract_length=80) }}</p>
+    {% endif %}
+{% endblock %}
+
+{% block image %}
+    <img src="{{ group.image_display_url or h.url_for_static('/base/images/placeholder-group.png') }}" alt="{{ group.title }}" class="media-image img-responsive">
+{% endblock %}

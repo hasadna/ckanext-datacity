@@ -303,10 +303,6 @@ div#content.container .row.wrapper {
     border-top: 1px solid #dddddd;
 }
 
-.module-content.sidebar-helper {
-    color: #7E8489;
-}
-
 .page-header {
     background-color: transparent;
 }
@@ -520,6 +516,10 @@ form.lang-select label {
     font-size: 14px;
 }
 
+form.lang-select select {
+    color: #1c4f7c;
+}
+
 .label[data-format] {
     background-color: #707070;
 }
@@ -555,4 +555,12 @@ section.additional-info a,div.module-content table a {
 
 .activity .item .date {
     color: #333;
+}
+
+.media-item span.count {
+    color: black;
+}
+
+.hide-heading {
+    display: block;
 }
