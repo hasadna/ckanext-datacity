@@ -36,9 +36,9 @@ virtualenv --python python2 venv
 pip install setuptools==36.1
 pip install -e 'git+https://github.com/hasadna/ckan.git@master#egg=ckan'
 pip install -r venv/src/ckan/requirements.txt
-docker-compose up -d redis solr db
-docker-compose exec -u postgres db createuser -S -D -R -P ckan_default
-docker-compose exec -u postgres db createdb -O ckan_default ckan_default -E utf-8
+docker compose up -d redis solr db
+docker compose exec -u postgres db createuser -S -D -R -P ckan_default
+docker compose exec -u postgres db createdb -O ckan_default ckan_default -E utf-8
 mkdir venv/etc
 paster make-config ckan venv/etc/development.ini
 ln -s `pwd`/venv/src/ckan/who.ini `pwd`/venv/etc/who.ini
@@ -54,12 +54,6 @@ ckan.site_url = http://localhost:5000
 ckan.storage_path = /absolute/path/to/venv/storage
 ```
 
-Create the DB tables:
-
-```
-paster --plugin=ckan db init -c venv/etc/development.ini
-```
-
 Install the datacity CKAN requirements:
 
 ```
@@ -70,6 +64,12 @@ Install the datacity plugin
 
 ```
 pip install -e .
+```
+
+Create the DB tables:
+
+```
+paster --plugin=ckan db init -c venv/etc/development.ini
 ```
 
 Edit the configuration (`venv/etc/development.ini`):
