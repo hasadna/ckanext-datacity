@@ -109,6 +109,14 @@
       "label": "Homepage title background image url"
     },
     {
+      "field_name": "homepage_title_design",
+      "label": "Homepage title design",
+      "preset": "select", "choices": [
+        {"value":  "default", "label":  "Default style"},
+        {"value":  "single-line-side", "label":  "Single Line Side"}
+      ]
+    },
+    {
       "field_name": "homepage_groups_background_color",
       "label": "Homepage groups background color"
     },

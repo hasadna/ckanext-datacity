@@ -106,11 +106,15 @@ def plugin_edit_clear_settings_cache(entity):
 
 @redis_cache(HOMEPAGE_GROUPS_REDIS_KEY, HOMEPAGE_GROUPS_REDIS_KEY_EXPIRES_SECONDS)
 def get_homepage_groups():
-    return get_action("group_list")(data_dict={
+    groups = []
+    for i, group in enumerate(get_action("group_list")(data_dict={
         "all_fields": True,
         "include_dataset_count": True,
         "sort": "title"
-    })
+    })):
+        group['i'] = i
+        groups.append(group)
+    return groups
 
 
 @redis_cache(HOMEPAGE_POPULAR_DATASETS_REDIS_KEY, HOMEPAGE_POPULAR_DATASETS_REDIS_KEY_EXPIRES_SECONDS)

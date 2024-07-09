@@ -36,6 +36,12 @@ body {
     font-size: 40px;
 }
 
+.homepage .module-search h1.heading-side {
+    margin-top: 60px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
 .homepage .module-search .module-content {
     background-color: transparent;
     padding-bottom: 20px;
@@ -75,6 +81,13 @@ body {
     border-color: #0058a9;
     border-width: 2px;
     border-radius: 15px;
+}
+
+.search-by-cat-top-container-slsd .search-form {
+    margin-top:70px;
+    margin-bottom:70px;
+    padding: 0;
+    border-bottom: unset;
 }
 
 .box {
@@ -118,6 +131,14 @@ body {
     }
 }
 
+.search-by-cat-top-container-slsd .search-by-cat {
+    padding:0;
+    margin:0;
+    -webkit-border-radius: unset;
+	-moz-border-radius: unset;
+	border-radius: unset;
+}
+
 .search-by-cat h3{
     margin-top: 30px;
     margin-bottom: 30px;
@@ -138,6 +159,10 @@ body {
 	margin: 0;
 	list-style: none;
 	padding-bottom: 15px;
+}
+
+.search-by-cat-top-container-slsd .surrey-media-grid {
+    padding: 0;
 }
 
 .surrey-media-grid:before, .surrey-media-grid:after {
@@ -167,11 +192,26 @@ body {
     }
 }
 
+.search-by-cat-top-container-slsd .surrey-media-item {
+    width: 190px;
+    height: 150px;
+    background-color: white;
+    border-left: 1px solid #cfcfcf;
+    margin: 0;
+}
+
 .surrey-media-item-wrap {
     border-radius: 30px;
     width: 120px;
     height: 120px;
     padding-top: 10px;
+}
+
+.search-by-cat-top-container-slsd .surrey-media-item-wrap {
+    border-radius: 0;
+    width: 189px;
+    height: 150px;
+    padding-top: 15px;
 }
 
 .surrey-media-item span {
@@ -181,6 +221,11 @@ body {
     font-weight: bold;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.search-by-cat-top-container-slsd .surrey-media-item span {
+    font-size: 20px;
+    font-weight: unset;
 }
 
 .surrey-media-item img {
@@ -195,6 +240,10 @@ body {
 ul.surrey-media-grid {
     margin: 0;
     padding: 0 26px;
+}
+
+.search-by-cat-top-container-slsd ul.surrey-media-grid {
+    padding: 0;
 }
 
 .homepage-datasets-top-container .SectionTitle {
@@ -284,6 +333,12 @@ ul.nav-facet li.nav-item {
 
 .homepage .search-by-cat-top-container {
     padding-top: 0;
+}
+
+.homepage .search-by-cat-top-container-slsd {
+    position: relative;
+    margin-top: -120px;
+    background-color: transparent;
 }
 
 .homepage .homepage-datasets-top-container {

@@ -89,7 +89,7 @@ paster --plugin=ckan sysadmin add admin -c venv/etc/development.ini
 #### Start the development server
 
 ```
-docker-compose up -d redis solr db
+docker compose up -d redis solr db
 . venv/bin/activate
 paster --plugin=ckan serve venv/etc/development.ini
 ```
@@ -102,15 +102,12 @@ docker-compose down
 
 #### Get latest translations from Transifex
 
-Get the Transifex API token
+Make sure you have a Transifex API token
 
-```
-TRANSIFEX_API_TOKEN=
-```
+* Install [Transifex Client](https://developers.transifex.com/docs/cli#installation)
+* Install gettext: `sudo apt-get install gettext`
 
-Install [Transifex Client](https://docs.transifex.com/client/installing-the-client)
-
-Get the translations and copy to the local CKAN source
+Get the translations and copy to the local CKAN source (it will ask for the API token)
 
 ```
 for LANG in he ar en_US; do

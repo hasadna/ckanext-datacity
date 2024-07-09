@@ -66,6 +66,10 @@
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
+      {% if h.setting('homepage_title_design') == 'single-line-side' %}
+        background-blend-mode: darken;
+        background-color: rgba(0,0,0,0.6);
+      {% endif %}
     }
     @media (max-width: 768px) {
       .hero {
@@ -149,5 +153,10 @@
         border-top-color: {{ h.color("footer_separator_color") }};
       }
     }
+    {% if h.setting('homepage_title_design') == 'single-line-side' %}
+        .homepage.layout-1 {
+            background-color: #182d88;
+        }
+    {% endif %}
   </style>
 {% endblock %}
