@@ -3,48 +3,71 @@
 {% block footer_content %}
 <div class="footer-row">
   <div class="footer-col footer-col-site">
-    {% if h.setting('footer_links_markdown_' + h.lang()) %}
-        {{ h.render_markdown(h.setting('footer_links_markdown_' + h.lang()), allow_html=True) }}
-    {% elif h.setting('footer_links_markdown_he') %}
-        <div dir="rtl">
-            {{ h.render_markdown(h.setting('footer_links_markdown_he'), allow_html=True) }}
+    {% if h.setting('footer_design') == 'alternative1' %}
+        <a class="logo" href="{{ h.url_for('home.index') }}" style="margin-left:50px;"><img src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="{{ _('Municipality Logo - link to homepage') }}" title="{{ _('Municipality Logo - link to homepage') }}"/></a>
+        <a href="https://www.hasadna.org.il/" target="_blank"><img src="{{ h.url_for_static('pkw_logo.png') }}" alt="{{ _('The Public Knowledge Workshop Logo') }}" title="{{ _('The Public Knowledge Workshop Logo') }}" width="100" height="100"/></a>
+    {% else %}
+        {% if h.setting('footer_links_markdown_' + h.lang()) %}
+            {{ h.render_markdown(h.setting('footer_links_markdown_' + h.lang()), allow_html=True) }}
+        {% elif h.setting('footer_links_markdown_he') %}
+            <div dir="rtl">
+                {{ h.render_markdown(h.setting('footer_links_markdown_he'), allow_html=True) }}
+            </div>
+        {% endif %}
+        <ul class="list-unstyled">
+          <li><a href="{{ h.url_for(controller='home', action='about') }}">{{ _('About {0}').format(h.setting('site_title_'+h.lang(), h.setting('site_title_he', g.site_title))) }}</a></li>
+        </ul>
+        <div class="row">
+          <div class="col-md-8">
+                {% block footer_lang %}
+                  {% snippet "snippets/language_selector.html" %}
+                {% endblock %}
+            </div>
         </div>
     {% endif %}
-    <ul class="list-unstyled">
-      <li><a href="{{ h.url_for(controller='home', action='about') }}">{{ _('About {0}').format(h.setting('site_title_'+h.lang(), h.setting('site_title_he', g.site_title))) }}</a></li>
-    </ul>
-    <div class="row">
-      <div class="col-md-8">
-            {% block footer_lang %}
-              {% snippet "snippets/language_selector.html" %}
-            {% endblock %}
-        </div>
-    </div>
   </div>
   <div class="footer-col footer-col-code">
-    <div>
-      <a href="https://github.com/hasadna/ckanext-datacity" target="_blank">{{ _('Site source code in GitHub') }}</a>
-      <a href="https://github.com/hasadna/ckanext-datacity" target="_blank"><img class="github-logo-icon" src="{{ h.url_for_static('GitHub-Mark-32px.png') }}" alt="GitHub Logo"/></a>
-    </div>
-    <div>
-      {% trans %}<strong>Powered by</strong> <a class="hide-text ckan-footer-logo" href="http://ckan.org">CKAN</a>{% endtrans %}
-      <a href="http://ckan.org" target="_blank"><img class="ckan-logo-icon" src="{{ h.url_for_static('ckan-logo-small.png') }}" alt="CKAN Logo"/></a>
-    </div>
-    <div>
-      <a href="{{ 'http://docs.ckan.org/en/{0}/api/'.format(g.ckan_doc_version) }}">{{ _('CKAN API') }}</a>
-    </div>
+    {% if h.setting('footer_design') == 'alternative1' %}
+    {% else %}
+        <div>
+          <a href="https://github.com/hasadna/ckanext-datacity" target="_blank">{{ _('Site source code in GitHub') }}</a>
+          <a href="https://github.com/hasadna/ckanext-datacity" target="_blank"><img class="github-logo-icon" src="{{ h.url_for_static('GitHub-Mark-32px.png') }}" alt="GitHub Logo"/></a>
+        </div>
+        <div>
+          {% trans %}<strong>Powered by</strong> <a class="hide-text ckan-footer-logo" href="http://ckan.org">CKAN</a>{% endtrans %}
+          <a href="http://ckan.org" target="_blank"><img class="ckan-logo-icon" src="{{ h.url_for_static('ckan-logo-small.png') }}" alt="CKAN Logo"/></a>
+        </div>
+        <div>
+          <a href="{{ 'http://docs.ckan.org/en/{0}/api/'.format(g.ckan_doc_version) }}">{{ _('CKAN API') }}</a>
+        </div>
+    {% endif %}
   </div>
   <div class="footer-col footer-col-hasadna">
-    <div>
-      {{ _('Developed by') }}
-    </div>
-    <a href="https://www.hasadna.org.il/" target="_blank"><img src="{{ h.url_for_static('hasadna-logo-small.png') }}" alt="{{ _('The Public Knowledge Workshop Logo') }}" title="{{ _('The Public Knowledge Workshop Logo') }}"/></a>
+    {% if h.setting('footer_design') == 'alternative1' %}
+        <div style="color:#262d5b;text-align:right;">
+            פותח ע"י הסדנא לידע ציבורי, בתמיכת הרשות לחדשנות
+            <br/>
+            לקוד מקור
+            <a href="https://github.com/hasadna/ckanext-datacity" target="_blank" style="color:#262d5b;text-decoration:underline;">בGitHub</a>,
+            מבוסס על מערכת
+            <a href="http://ckan.org" target="_blank" style="color:#262d5b;text-decoration:underline;">CKAN</a>
+        </div>
+    {% else %}
+        <div>
+          {{ _('Developed by') }}
+        </div>
+        <a href="https://www.hasadna.org.il/" target="_blank"><img src="{{ h.url_for_static('hasadna-logo-small.png') }}" alt="{{ _('The Public Knowledge Workshop Logo') }}" title="{{ _('The Public Knowledge Workshop Logo') }}"/></a>
+    {% endif %}
   </div>
   <div class="footer-col footer-col-iia">
-    <div>
-      {{ _('Support from Israel Innovation Authority') }}
-    </div>
-    <img src="{{ h.url_for_static('logoInnovationAuthority.png') }}" alt="Innovation Authority Logo"/>
+    {% if h.setting('footer_design') == 'alternative1' %}
+        <img src="{{ h.url_for_static('Israel_Innovation_Authority.svg.png') }}" alt="Innovation Authority Logo" width="175"/>
+    {% else %}
+        <div>
+          {{ _('Support from Israel Innovation Authority') }}
+        </div>
+        <img src="{{ h.url_for_static('logoInnovationAuthority.png') }}" alt="Innovation Authority Logo"/>
+    {% endif %}
   </div>
 </div>
 <script>

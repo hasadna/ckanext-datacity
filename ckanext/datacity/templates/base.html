@@ -158,5 +158,11 @@
             background-color: #182d88;
         }
     {% endif %}
+    {% if h.setting('homepage_datasets_all_datasets_design') == 'alternative1' %}
+        .homepage-datasets-top-container .show-all-datasets-wrap h3 {
+            background-color: #070f44;
+            color: white;
+        }
+    {% endif %}
   </style>
 {% endblock %}

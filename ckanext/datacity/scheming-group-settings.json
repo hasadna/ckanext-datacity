@@ -149,6 +149,14 @@
       "label": "Homepage datasets text color"
     },
     {
+      "field_name": "homepage_datasets_all_datasets_design",
+      "label": "Homepage datasets all datasets button design",
+      "preset": "select", "choices": [
+          {"value":  "default", "label":  "Default style"},
+          {"value":  "alternative1", "label":  "Alternative 1"}
+      ]
+    },
+    {
       "field_name": "homepage_featured_packages_num",
       "label": "Homepage groups number of packages to display per component"
     },
@@ -179,6 +187,14 @@
       "form_snippet": "footer_links_markdown_with_html.html",
       "form_placeholder": "* [الرابط الثاني](https://www.example.com)\n* [رابط واحد](https://www.example.com)",
       "lang_support": "arabic"
+    },
+    {
+      "field_name": "footer_design",
+      "label": "Footer design",
+      "preset": "select", "choices": [
+        {"value":  "default", "label":  "Default style"},
+        {"value":  "alternative1", "label":  "Alternative 1"}
+      ]
     },
     {
       "field_name": "about_markdown_he",
