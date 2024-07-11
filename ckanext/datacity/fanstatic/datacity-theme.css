@@ -619,3 +619,18 @@ section.additional-info a,div.module-content table a {
 .hide-heading {
     display: block;
 }
+
+.mainpage_secondary_content_header {
+    background-color: #97dbf8;
+    font-size: 27px;
+    font-weight: bold;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h2.mainpage_secondary_content_header span {
+    display: block;
+    padding: 0;
+    border: 0;
+}

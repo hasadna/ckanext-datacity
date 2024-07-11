@@ -61,7 +61,7 @@
     .homepage .module-search .module-content .heading {
       color: {{ h.color('homepage_title_text_color') }};
     }
-    .hero {
+    [role=main].hero {
       background: url({{ h.setting('homepage_title_background_image_url', 'https://www.datacity.org.il/wp-content/uploads/2020/08/zagreb.png') }});
       background-repeat: no-repeat;
       background-size: cover;
@@ -72,7 +72,7 @@
       {% endif %}
     }
     @media (max-width: 768px) {
-      .hero {
+      [role=main].hero {
         background: transparent;
       }
     }
@@ -162,6 +162,25 @@
         .homepage-datasets-top-container .show-all-datasets-wrap h3 {
             background-color: #070f44;
             color: white;
+        }
+    {% endif %}
+    {% if h.setting('footer_design') == 'alternative1' %}
+        [role=main] {
+            padding:0;
+            background:white;
+        }
+        div#content.container .row.wrapper {
+            border: 0;
+        }
+        .wrapper:before {
+            border: 0;
+        }
+        .module-content {
+            padding:0;
+        }
+        h1 {
+            font-size:45px;
+            font-weight:bold;
         }
     {% endif %}
   </style>
