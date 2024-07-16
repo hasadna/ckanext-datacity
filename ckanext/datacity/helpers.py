@@ -56,6 +56,7 @@ def get_setting(setting, default=None):
 
 def get_color(color):
     default = {
+        "default_global_text_color": "333333",
         "top_header_background_color": "ffffff",
         "menu_background_color": "ffffff",
         "menu_text_color": "1c4f7c",

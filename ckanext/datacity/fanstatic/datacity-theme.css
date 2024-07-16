@@ -197,6 +197,7 @@ body {
     height: 150px;
     background-color: white;
     border-left: 1px solid #cfcfcf;
+    border-bottom: 1px solid #cfcfcf;
     margin: 0;
 }
 
@@ -209,8 +210,8 @@ body {
 
 .search-by-cat-top-container-slsd .surrey-media-item-wrap {
     border-radius: 0;
-    width: 189px;
-    height: 150px;
+    width: 187px;
+    height: 147px;
     padding-top: 15px;
 }
 
@@ -224,7 +225,7 @@ body {
 }
 
 .search-by-cat-top-container-slsd .surrey-media-item span {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: unset;
 }
 

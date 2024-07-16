@@ -31,6 +31,15 @@
       "lang_support": "arabic"
     },
     {
+      "field_name": "default_global_font",
+      "label": "Default Global Font",
+      "preset": "select", "choices": [{"value":  "Rubik", "label":  "Default font"}, {"value":  "Assistant", "label":  "Assistant"}]
+    },
+    {
+      "field_name": "default_global_text_color",
+      "label": "Default Global Text Color"
+    },
+    {
       "field_name": "homepage_override_title_he",
       "label": "Override Homepage Site Title Hebrew"
     },
@@ -79,6 +88,11 @@
     {
       "field_name": "menu_highlight_color",
       "label": "Menu highlight color"
+    },
+    {
+      "field_name": "menu_design",
+      "label": "Menu design",
+      "preset": "select", "choices": [{"value":  "default", "label":  "Default style"}, {"value":  "alternative1", "label":  "Alternative 1"}]
     },
     {
       "field_name": "datacity_logo_url",

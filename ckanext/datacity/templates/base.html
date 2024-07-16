@@ -3,7 +3,11 @@
 {% block styles %}
   {{ super() }}
   {% resource 'datacity/datacity-theme.css' %}
+  {% if not h.setting('default_global_font') or h.setting('default_global_font') == 'Rubik' %}
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+  {% else %}
+  <link href="https://fonts.googleapis.com/css2?family={{ h.setting('default_global_font') }}:wght@200..800&display=swap" rel="stylesheet">
+  {% endif %}
 {% endblock %}
 
 {%- block title -%}
@@ -45,9 +49,19 @@
     }
     .dc-flex-navbar .dcfn-item.dcfni-navbar a:hover::after {
       background: {{ h.color("menu_highlight_color") }};
+      {% if h.setting('menu_design') == 'alternative1' %}
+          width: 30px;
+          right: 15px;
+          left: unset;
+      {% endif %}
     }
     .dc-flex-navbar .dcfn-item.dcfni-navbar li.active a::after {
       background: {{ h.color("menu_highlight_color") }};
+      {% if h.setting('menu_design') == 'alternative1' %}
+          width: 30px;
+          right: 15px;
+          left: unset;
+      {% endif %}
     }
     .masthead {
       background-color: {{ h.color("menu_background_color") }};
@@ -94,6 +108,16 @@
     }
     body {
       background-color: {{ h.color("footer_background_color") }};
+      color: {{ h.color("default_global_text_color") }};
+      {% if h.setting('default_global_font') and h.setting('default_global_font') != 'Rubik' %}
+        font-family: '{{ h.setting('default_global_font') }}', Tahoma, "Helvetica Neue", Arial, Helvetica, sans-serif;
+      {% endif %}
+    }
+    .dataset-heading a,
+    .nav-item > a,
+    .nav-aside li a,
+    .empty {
+        color: {{ h.color("default_global_text_color") }};
     }
     .wrapper:before {
       border-{{ 'right' if h.is_rtl_language() else 'left' }}: 0;
@@ -146,6 +170,9 @@
     }
     .homepage-datasets-top-container .show-all-datasets-inner h3:hover {
       background-color: {{ h.color("homepage_datasets_button_hover_background_color") }};
+      {% if h.setting('homepage_datasets_all_datasets_design') == 'alternative1' %}
+        color: {{ h.color("homepage_datasets_text_color") }};
+      {% endif %}
     }
     @media (max-width: 768px) {
       .footer-col-code {
@@ -162,9 +189,20 @@
         .homepage-datasets-top-container .show-all-datasets-wrap h3 {
             background-color: #070f44;
             color: white;
+            border-radius: unset;
+            padding-bottom: 8px;
+            padding-top: 8px;
+            width: 200px;
         }
     {% endif %}
     {% if h.setting('footer_design') == 'alternative1' %}
+        footer.site-footer {
+            border-top: 1px solid #e9e9e9;
+            padding: 0;
+        }
+        .footer-row {
+            margin-top: 20px;
+        }
         [role=main] {
             padding:0;
             background:white;
@@ -181,6 +219,15 @@
         h1 {
             font-size:45px;
             font-weight:bold;
+        }
+        .module-narrow .module-heading {
+            font-weight: bold;
+        }
+        .filters h2.module-heading span {
+            border-bottom: 3px solid #97dbf8;
+        }
+        .masthead {
+            padding-bottom: 30px
         }
     {% endif %}
   </style>

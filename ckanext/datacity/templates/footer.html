@@ -44,7 +44,7 @@
   </div>
   <div class="footer-col footer-col-hasadna">
     {% if h.setting('footer_design') == 'alternative1' %}
-        <div style="color:#262d5b;text-align:right;">
+        <div style="color:#070f44;text-align:right;font-weight: normal;width: 610px;margin-top:30px;">
             פותח ע"י הסדנא לידע ציבורי, בתמיכת הרשות לחדשנות
             <br/>
             לקוד מקור
@@ -61,7 +61,7 @@
   </div>
   <div class="footer-col footer-col-iia">
     {% if h.setting('footer_design') == 'alternative1' %}
-        <img src="{{ h.url_for_static('Israel_Innovation_Authority.svg.png') }}" alt="Innovation Authority Logo" width="175"/>
+        <img style="margin-top:30px;" src="{{ h.url_for_static('Israel_Innovation_Authority.svg.png') }}" alt="Innovation Authority Logo" width="175"/>
     {% else %}
         <div>
           {{ _('Support from Israel Innovation Authority') }}
