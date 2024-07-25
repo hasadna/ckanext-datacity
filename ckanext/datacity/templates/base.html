@@ -229,6 +229,74 @@
         .masthead {
             padding-bottom: 30px
         }
+
+        .filters .nav-facet .nav-item > a {
+            padding-right: 30px;
+            font-size:18px;
+            font-weight: 500;
+            color: #100545;
+        }
+        .filters .nav-facet .nav-item > a:after {
+          display: inline-block;
+          vertical-align: text-bottom;
+          position: relative;
+          top: 2px;
+          width: 8px;
+          height: 23px;
+          background-color: #291e89;
+          content: "";
+          position: absolute;
+          top: 45%;
+          right: 20px;
+          margin-top: -8px;
+        }
+        .filters .nav-facet .nav-item > a:hover:after {
+            right: 15px;
+            width: 19px;
+            height: 19px;
+            background-image: url(/sidefiltersicons.png);
+            background-position: 0 0;
+        }
+        .filters .nav-facet .nav-item.active > a:after {
+            right: 15px;
+            width: 19px;
+            height: 19px;
+            background-image: url(/sidefiltersicons.png);
+            background-position: 0 -18px;
+        }
+        .filters .nav-item.active > a, .filters .nav-item > a:hover {
+            background-color: #291e89;
+            color: white;
+        }
+        .filters .badge {
+            color: #291e89;
+            background-color: #eeeeee;
+            border-radius: 5px;
+            margin-right: 25px;
+        }
+        .filters .nav-facet .nav-item.active .badge {
+            background-color: transparent;
+            color: white;
+        }
+        #dataset-search-form .pill {
+            background-color: #291e89;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        #dataset-search-form .pill i.fa-times:before {
+          display: inline-block;
+          vertical-align: text-bottom;
+          position: relative;
+          top: 3px;
+          width: 18px;
+          height: 18px;
+          background-image: url(/sidefiltersicons.png);
+          background-repeat: no-repeat;
+          background-position: 0 -18px;
+          content: "";
+          right: 5px;
+          margin-top: -8px;
+        }
     {% endif %}
   </style>
 {% endblock %}
