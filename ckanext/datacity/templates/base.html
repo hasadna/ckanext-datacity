@@ -145,8 +145,15 @@
         text-align: right;
     }
     {% endif %}
-    .dc-flex-navbar {flex-direction: row{% if h.setting('header_navbar_style') != 'city-logo-left' %}-reverse{% endif %};}
-    @media (max-width: 768px) {.dc-flex-navbar {flex-direction: column;}}
+    .dc-flex-navbar {
+        flex-direction: row{% if h.setting('header_navbar_style') != 'city-logo-left' %}-reverse{% endif %};
+    }
+    @media (max-width: 768px) {
+        .dc-flex-navbar {
+            flex-direction: row{% if h.setting('header_navbar_style') != 'city-logo-left' %}-reverse{% endif %};
+            flex-wrap: wrap;
+        }
+    }
     .homepage .module-search .module-content .heading {
       background-color: {{ h.color("homepage_title_background_color") }};
     }
@@ -184,6 +191,11 @@
         .homepage.layout-1 {
             background-color: #182d88;
         }
+        @media (max-width: 768px) {
+            .homepage.layout-1 {
+                background-color: transparent;
+            }
+        }
     {% endif %}
     {% if h.setting('homepage_datasets_all_datasets_design') == 'alternative1' %}
         .homepage-datasets-top-container .show-all-datasets-wrap h3 {
@@ -202,6 +214,14 @@
         }
         .footer-row {
             margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .footer-col-code {
+                border: 0;
+            }
+        }
+        .footer-row a.logo img {
+            width: 115px;
         }
         [role=main] {
             padding:0;
@@ -295,6 +315,26 @@
           content: "";
           right: 5px;
           margin-top: -8px;
+        }
+        @media (max-width: 768px) {
+            .module.context-info {
+                display: none;
+            }
+            .page-header.module-content {
+                display: none;
+            }
+            .form-select.form-group.control-order-by {
+                display: none;
+            }
+            p.empty {
+                display: none;
+            }
+            .toolbar .breadcrumb a {
+                color: initial;
+            }
+            .module-narrow.social {
+                display: none;
+            }
         }
     {% endif %}
   </style>

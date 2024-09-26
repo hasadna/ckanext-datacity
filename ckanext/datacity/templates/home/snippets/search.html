@@ -1,15 +1,12 @@
 <div class="module module-search module-narrow module-shallow box">
-    {% if h.setting('homepage_title_design') == 'single-line-side' %}
-        <h1 class="heading-side">
-            {{ h.setting('homepage_title_text_line_1', 'פורטל מידע פתוח') }}<br/>
-        </h1>
-    {% else %}
-        <form class="module-content search-form" method="get" action="{% url_for controller='package', action='search' %}">
+    <h1 class="heading-side search-heading-sls">
+        {{ h.setting('homepage_title_text_line_1', 'פורטל מידע פתוח') }}<br/>
+    </h1>
+    <form class="module-content search-form search-container-standard" method="get" action="{% url_for controller='package', action='search' %}">
         <h1 class="heading">
           {{ h.setting('homepage_title_text_line_1', 'פורטל מידע פתוח') }}<br/>
           {{ h.setting('homepage_title_text_line_2', h.site_title()) }}
         </h1>
         {% snippet 'home/snippets/search_box.html' %}
-        </form>
-    {% endif %}
+    </form>
 </div>

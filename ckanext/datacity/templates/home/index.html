@@ -8,6 +8,35 @@
   {% endif %}
 {%- endblock -%}
 
+{%- block custom_styles -%}
+    {{ super() }}
+    <style>
+        {% if h.setting('homepage_title_design') == 'single-line-side' %}
+            .search-container-standard {
+                display: none;
+            }
+        {% else %}
+            .search-heading-sls {
+                display: none;
+            }
+            .search-container-sls {
+                display: none;
+            }
+        {% endif %}
+        @media (max-width: 768px) {
+            .search-heading-sls {
+                display: none;
+            }
+            .search-container-sls {
+                display: none;
+            }
+            .search-container-standard {
+                display: block;
+            }
+        }
+    </style>
+{%- endblock -%}
+
 {% block primary_content %}
   {% snippet "home/layout-datacity.html" %}
 {% endblock %}
