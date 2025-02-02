@@ -102,12 +102,15 @@ docker-compose down
 
 #### Get latest translations from Transifex
 
-Make sure you have a Transifex API token
+Get the Transifex API token
 
+```
+export TX_TOKEN=
+```
 * Install [Transifex Client](https://developers.transifex.com/docs/cli#installation)
 * Install gettext: `sudo apt-get install gettext`
 
-Get the translations and copy to the local CKAN source (it will ask for the API token)
+Get the translations and copy to the local CKAN source
 
 ```
 for LANG in he ar en_US; do
