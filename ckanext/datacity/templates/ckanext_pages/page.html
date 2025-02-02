@@ -1,0 +1,154 @@
+{% ckan_extends %}
+
+{% block ckanext_pages_content %}
+    {% if c.page.content and c.page.content.strip().startswith('--datacity-gallery--') %}
+<style>
+  /* Added border to carousel */
+  #myCarousel {
+    border: 2px solid #000;
+    padding: 10px;
+  }
+
+  .carousel-inner > .item > img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .carousel-control {
+    width: 5%;
+    color: #fff;
+    background-color: rgba(0,0,0,0.7);
+  }
+
+  /* Place indicators below the border */
+  .carousel-indicators {
+    bottom: -40px;
+    margin-top: 0;
+    background-color: transparent;
+  }
+
+  .carousel-indicators li {
+    background-color: #ccc;
+    border: 2px solid #000;
+  }
+
+  .carousel-indicators .active {
+    background-color: #000;
+  }
+<style>
+  /* Added border to carousel */
+  #myCarousel {
+    border: 2px solid #000;
+    padding: 10px;
+  }
+
+  .carousel-inner > .item > img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Ensure images are centered when wrapped in an anchor */
+  .carousel-inner .item a {
+    display: block;
+    text-align: center;
+  }
+
+  .carousel-inner .item a img {
+    margin: 0 auto;
+    display: block;
+    height: 600px;
+  }
+
+  .carousel-control {
+    width: 5%;
+    color: #fff;
+    background-color: rgba(0,0,0,0.7);
+  }
+
+  /* Place indicators below the border */
+  .carousel-indicators {
+    bottom: -40px;
+    margin-top: 0;
+    background-color: transparent;
+  }
+
+  .carousel-indicators li {
+    background-color: #ccc;
+    border: 2px solid #000;
+  }
+
+  .carousel-indicators .active {
+    background-color: #000;
+  }
+</style>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators (to be populated by JS) -->
+  <ol class="carousel-indicators" id="carousel-indicators"></ol>
+
+  <!-- Wrapper for slides (to be populated by JS) -->
+  <div class="carousel-inner" id="carousel-inner"></div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+  </a>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var configJson = `{{ c.page.content.strip().split("--datacity-gallery--")[1] | safe }}`;
+    var config = JSON.parse(configJson);
+    var jsonUrl = config.jsonUrl;
+    var slide_images_prefix = config.slide_images_prefix;
+    var slide_images_suffix = config.slide_images_suffix;
+    function createSlides(slides) {
+      var indicatorsContainer = document.getElementById('carousel-indicators');
+      var innerContainer = document.getElementById('carousel-inner');
+      indicatorsContainer.innerHTML = '';
+      innerContainer.innerHTML = '';
+      slides.forEach(function(slide, index) {
+        var slide_link = slide.link;
+        var slide_image = slide_images_prefix + slide.gallery_image + slide_images_suffix;
+        var indicator = document.createElement('li');
+        indicator.setAttribute('data-target', '#myCarousel');
+        indicator.setAttribute('data-slide-to', index);
+        if (index === 0) {
+          indicator.classList.add('active');
+        }
+        indicatorsContainer.appendChild(indicator);
+        var itemDiv = document.createElement('div');
+        itemDiv.classList.add('item');
+        if (index === 0) {
+          itemDiv.classList.add('active');
+        }
+        var anchor = document.createElement('a');
+        anchor.href = slide_link;
+        anchor.target = '_blank';
+        var img = document.createElement('img');
+        img.src = slide_image;
+        img.alt = '';
+        anchor.appendChild(img);
+        itemDiv.appendChild(anchor);
+        innerContainer.appendChild(itemDiv);
+      });
+    }
+    fetch(jsonUrl)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        createSlides(data);
+      })
+      .catch(function(error) {
+        console.error('Error fetching slides:', error);
+      });
+  });
+</script>
+    {% else  %}
+        {{ super() }}
+    {% endif %}
+{% endblock %}
