@@ -31,6 +31,15 @@
       "lang_support": "arabic"
     },
     {
+      "field_name": "default_global_font",
+      "label": "Default Global Font",
+      "preset": "select", "choices": [{"value":  "Rubik", "label":  "Default font"}, {"value":  "Assistant", "label":  "Assistant"}]
+    },
+    {
+      "field_name": "default_global_text_color",
+      "label": "Default Global Text Color"
+    },
+    {
       "field_name": "homepage_override_title_he",
       "label": "Override Homepage Site Title Hebrew"
     },
@@ -81,6 +90,11 @@
       "label": "Menu highlight color"
     },
     {
+      "field_name": "menu_design",
+      "label": "Menu design",
+      "preset": "select", "choices": [{"value":  "default", "label":  "Default style"}, {"value":  "alternative1", "label":  "Alternative 1"}]
+    },
+    {
       "field_name": "datacity_logo_url",
       "label": "Datacity logo URL"
     },
@@ -107,6 +121,14 @@
     {
       "field_name": "homepage_title_background_image_url",
       "label": "Homepage title background image url"
+    },
+    {
+      "field_name": "homepage_title_design",
+      "label": "Homepage title design",
+      "preset": "select", "choices": [
+        {"value":  "default", "label":  "Default style"},
+        {"value":  "single-line-side", "label":  "Single Line Side"}
+      ]
     },
     {
       "field_name": "homepage_groups_background_color",
@@ -141,6 +163,14 @@
       "label": "Homepage datasets text color"
     },
     {
+      "field_name": "homepage_datasets_all_datasets_design",
+      "label": "Homepage datasets all datasets button design",
+      "preset": "select", "choices": [
+          {"value":  "default", "label":  "Default style"},
+          {"value":  "alternative1", "label":  "Alternative 1"}
+      ]
+    },
+    {
       "field_name": "homepage_featured_packages_num",
       "label": "Homepage groups number of packages to display per component"
     },
@@ -171,6 +201,14 @@
       "form_snippet": "footer_links_markdown_with_html.html",
       "form_placeholder": "* [الرابط الثاني](https://www.example.com)\n* [رابط واحد](https://www.example.com)",
       "lang_support": "arabic"
+    },
+    {
+      "field_name": "footer_design",
+      "label": "Footer design",
+      "preset": "select", "choices": [
+        {"value":  "default", "label":  "Default style"},
+        {"value":  "alternative1", "label":  "Alternative 1"}
+      ]
     },
     {
       "field_name": "about_markdown_he",

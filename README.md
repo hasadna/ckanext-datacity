@@ -107,8 +107,8 @@ Get the Transifex API token
 ```
 export TX_TOKEN=
 ```
-
-Install [Transifex Client](https://developers.transifex.com/docs/cli)
+* Install [Transifex Client](https://developers.transifex.com/docs/cli#installation)
+* Install gettext: `sudo apt-get install gettext`
 
 Get the translations and copy to the local CKAN source
 

@@ -6,7 +6,7 @@
   </div>
 </div>
 
-<div class="search-by-cat-top-container">
+<div class="search-by-cat-top-container{{ ' search-by-cat-top-container-slsd' if h.setting('homepage_title_design') == 'single-line-side' else '' }}">
   <div class="container">
     {% snippet 'home/snippets/groups.html' %}
   </div>

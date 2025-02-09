@@ -36,6 +36,12 @@ body {
     font-size: 40px;
 }
 
+.homepage .module-search h1.heading-side {
+    margin-top: 60px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
 .homepage .module-search .module-content {
     background-color: transparent;
     padding-bottom: 20px;
@@ -75,6 +81,13 @@ body {
     border-color: #0058a9;
     border-width: 2px;
     border-radius: 15px;
+}
+
+.search-by-cat-top-container-slsd .search-form {
+    margin-top:70px;
+    margin-bottom:70px;
+    padding: 0;
+    border-bottom: unset;
 }
 
 .box {
@@ -118,6 +131,14 @@ body {
     }
 }
 
+.search-by-cat-top-container-slsd .search-by-cat {
+    padding:0;
+    margin:0;
+    -webkit-border-radius: unset;
+	-moz-border-radius: unset;
+	border-radius: unset;
+}
+
 .search-by-cat h3{
     margin-top: 30px;
     margin-bottom: 30px;
@@ -138,6 +159,10 @@ body {
 	margin: 0;
 	list-style: none;
 	padding-bottom: 15px;
+}
+
+.search-by-cat-top-container-slsd .surrey-media-grid {
+    padding: 0;
 }
 
 .surrey-media-grid:before, .surrey-media-grid:after {
@@ -167,11 +192,27 @@ body {
     }
 }
 
+.search-by-cat-top-container-slsd .surrey-media-item {
+    width: 190px;
+    height: 150px;
+    background-color: white;
+    border-left: 1px solid #cfcfcf;
+    border-bottom: 1px solid #cfcfcf;
+    margin: 0;
+}
+
 .surrey-media-item-wrap {
     border-radius: 30px;
     width: 120px;
     height: 120px;
     padding-top: 10px;
+}
+
+.search-by-cat-top-container-slsd .surrey-media-item-wrap {
+    border-radius: 0;
+    width: 187px;
+    height: 147px;
+    padding-top: 15px;
 }
 
 .surrey-media-item span {
@@ -181,6 +222,11 @@ body {
     font-weight: bold;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.search-by-cat-top-container-slsd .surrey-media-item span {
+    font-size: 16px;
+    font-weight: unset;
 }
 
 .surrey-media-item img {
@@ -195,6 +241,10 @@ body {
 ul.surrey-media-grid {
     margin: 0;
     padding: 0 26px;
+}
+
+.search-by-cat-top-container-slsd ul.surrey-media-grid {
+    padding: 0;
 }
 
 .homepage-datasets-top-container .SectionTitle {
@@ -286,6 +336,18 @@ ul.nav-facet li.nav-item {
     padding-top: 0;
 }
 
+.homepage .search-by-cat-top-container-slsd {
+    position: relative;
+    margin-top: -120px;
+    background-color: transparent;
+}
+
+@media (max-width: 768px) {
+    .homepage .search-by-cat-top-container-slsd {
+        margin-top: 0;
+    }
+}
+
 .homepage .homepage-datasets-top-container {
     padding-top: 0;
 }
@@ -333,6 +395,12 @@ form.lang-select label {
     display: flex;
 }
 
+@media (max-width: 768px) {
+    .dc-flex-navbar .dcfn-item.dcfni-navbar {
+        flex-basis: 100%;
+    }
+}
+
 .dc-flex-navbar .dcfn-item.dcfni-navbar a {
     font-size: 16px;
     padding-bottom: 3px;
@@ -360,12 +428,22 @@ form.lang-select label {
     background-color: transparent;
 }
 
+@media (max-width: 768px) {
+    .nav-pills > li {
+        float: right;
+    }
+}
+
 .dc-flex-navbar .dcfn-item.dcfni-navbar nav.section.navigation {
     margin: 0 auto;
 }
 
 .masthead .logo {
     margin-right: 0 !important;
+}
+
+.account-masthead {
+    border-bottom: 1px solid #dddddd;
 }
 
 .dcfni-city-logo {
@@ -394,6 +472,12 @@ form.lang-select label {
     .dcfni-datacity-logo {
         flex-basis: 0;
         order: -2;
+    }
+    .dcfni-city-logo hgroup {
+        text-align: center;
+    }
+    .dcfni-datacity-logo {
+        text-align: center;
     }
 }
 
@@ -561,6 +645,27 @@ section.additional-info a,div.module-content table a {
     color: black;
 }
 
+@media (max-width: 768px) {
+    .media-item {
+        width: 145px;
+    }
+}
+
 .hide-heading {
     display: block;
+}
+
+.mainpage_secondary_content_header {
+    background-color: #97dbf8;
+    font-size: 27px;
+    font-weight: bold;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h2.mainpage_secondary_content_header span {
+    display: block;
+    padding: 0;
+    border: 0;
 }

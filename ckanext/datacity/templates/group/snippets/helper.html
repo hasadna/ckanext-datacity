@@ -1,6 +1,6 @@
 <div class="module module-narrow module-shallow">
-  <h2 class="module-heading">
-      <span>{{ _('What are Groups?') }}</span>
+  <h2 class="module-heading{{ ' mainpage_secondary_content_header' if h.setting('footer_design') == 'alternative1' else '' }}">
+    <span>{{ _('What are Groups?') }}</span>
   </h2>
   <div class="module-content sidebar-helper">
     <p>

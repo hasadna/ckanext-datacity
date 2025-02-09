@@ -1,5 +1,20 @@
 {% ckan_extends %}
 
+{% block toolbar %}
+    {% if h.setting('footer_design') != 'alternative1' %}
+        {{ super() }}
+    {% endif %}
+{% endblock %}
+
+{% block secondary_content %}
+    {% if h.setting('footer_design') == 'alternative1' %}
+    <div class="mainpage_secondary_content_header">
+        קטלוג מידע
+    </div>
+    {% endif %}
+    {{ super() }}
+{% endblock %}
+
 {% block form %}
     <h1 class="hide-heading">{{ _('Datasets') }}</h1>
     {{ super() }}
