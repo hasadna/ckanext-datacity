@@ -2,7 +2,7 @@
 
 {% block styles %}
   {{ super() }}
-  {% resource 'datacity/datacity-theme.css' %}
+  {% asset 'datacity/datacity-css' %}
   {% if not h.setting('default_global_font') or h.setting('default_global_font') == 'Rubik' %}
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
   {% else %}

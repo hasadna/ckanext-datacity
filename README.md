@@ -23,41 +23,36 @@ datacity.settings_group_id = settings
 
 Prerequisites
 
-* Verify Python version, it should be Python 2.7: `python --version`
-* Install Python virtualenv: `sudo apt-get install python-virtualenv`
+* Verify Python version, it should be Python 3.10: `python --version`
 * Install Docker & Docker Compose
 * Clone of hasadna/ckan-cloud-docker at ../ckan-cloud-docker
 
 Initialize
 
 ```
-virtualenv --python python2 venv
-. venv/bin/activate
-pip install setuptools==36.1
-pip install -e 'git+https://github.com/hasadna/ckan.git@master#egg=ckan'
-pip install -r venv/src/ckan/requirements.txt
+python 3.10 -m venv venv3
+. venv3/bin/activate
+pip install --upgrade pip
+pip install -e 'git+https://github.com/ckan/ckan.git@ckan-2.11.2#egg=ckan[requirements]'
 docker compose up -d redis solr db
 docker compose exec -u postgres db createuser -S -D -R -P ckan_default
 docker compose exec -u postgres db createdb -O ckan_default ckan_default -E utf-8
-mkdir venv/etc
-paster make-config ckan venv/etc/development.ini
-ln -s `pwd`/venv/src/ckan/who.ini `pwd`/venv/etc/who.ini
-mkdir venv/storage
+mkdir venv3/etc
+ckan generate config venv3/etc/development.ini
+mkdir venv3/storage
 ```
 
 Edit the created config file (`venv/etc/development.ini`) and set the following:
 
 ```
 sqlalchemy.url = postgresql://ckan_default:pass@127.0.0.1/ckan_default
-solr_url = http://127.0.0.1:8983/solr/ckan
-ckan.site_url = http://localhost:5000
-ckan.storage_path = /absolute/path/to/venv/storage
+ckan.storage_path = /absolute/path/to/venv/storage 
 ```
 
-Install the datacity CKAN requirements:
+Install the requirements:
 
 ```
-pip install -r ../ckan-cloud-docker/ckan/requirements.txt
+pip install -r requirements.txt
 ```
 
 Install the datacity plugin
@@ -69,17 +64,23 @@ pip install -e .
 Create the DB tables:
 
 ```
-paster --plugin=ckan db init -c venv/etc/development.ini
+( cd venv3/src/ckan && ckan -c ../../etc/development.ini db init ) 
 ```
 
-Edit the configuration (`venv/etc/development.ini`):
+Edit the configuration (`venv3/etc/development.ini`):
 
-add `datacity` to ckan.plugins
+```
+ckan.plugins = activity datacity scheming_datasets scheming_groups pages
+
+scheming.dataset_schemas = ckanext.datacity:scheming-dataset.json
+scheming.group_schemas = ckanext.datacity:scheming-group-settings.json ckanext.datacity:scheming-group-automation.json
+```
 
 Create admin user
 
 ```
-paster --plugin=ckan sysadmin add admin -c venv/etc/development.ini
+ckan -c venv3/etc/development.ini user add admin email=admin@localhost password=12345678
+ckan -c venv3/etc/development.ini sysadmin add admin
 ```
 
 (optional) to enable debugging - install dev requirements - `pip install -r venv/src/ckan/dev-requirements.txt` and set debug=true in `venv/etc/development.ini`
@@ -90,8 +91,8 @@ paster --plugin=ckan sysadmin add admin -c venv/etc/development.ini
 
 ```
 docker compose up -d redis solr db
-. venv/bin/activate
-paster --plugin=ckan serve venv/etc/development.ini
+. venv3/bin/activate
+( cd venv3/src/ckan && ckan -c ../../etc/development.ini run )
 ```
 
 Stop all containers
@@ -113,12 +114,14 @@ export TX_TOKEN=
 Get the translations and copy to the local CKAN source
 
 ```
+mkdir -p venv3/src/ckan/ckan/i18n/en_US/LC_MESSAGES/
+mv venv3/src/ckan/ckan/i18n/en_GB/LC_MESSAGES/ckan.mo venv3/src/ckan/ckan/i18n/en_US/LC_MESSAGES/ckan.mo
 for LANG in he ar en_US; do
     echo downloading $LANG &&\
     tx pull -tl $LANG &&
-    mv ckanext/datacity/i18n/$LANG/LC_MESSAGES/ckan-datacity.po venv/src/ckan/ckan/i18n/$LANG/LC_MESSAGES/ckan.po &&\
+    mv ckanext/datacity/i18n/$LANG/LC_MESSAGES/ckan-datacity.po venv3/src/ckan/ckan/i18n/$LANG/LC_MESSAGES/ckan.po &&\
     echo compiling $LANG &&\
-    msgfmt -o venv/src/ckan/ckan/i18n/$LANG/LC_MESSAGES/ckan.mo venv/src/ckan/ckan/i18n/$LANG/LC_MESSAGES/ckan.po &&\
+    msgfmt -o venv3/src/ckan/ckan/i18n/$LANG/LC_MESSAGES/ckan.mo venv3/src/ckan/ckan/i18n/$LANG/LC_MESSAGES/ckan.po &&\
     echo OK
 done
 ```
@@ -211,3 +214,20 @@ Start the Jobs service
 . venv/bin/.activate
 paster --plugin=ckan jobs -c venv/etc/development.ini worker
 ```
+
+## Initializing the instance with data and settings
+
+```
+# Get the api key from the admin user page on the ckan instance
+export CKAN_INSTANCE_DEV_API_KEY=
+IMAGE="$(curl -s https://raw.githubusercontent.com/hasadna/hasadna-k8s/refs/heads/master/apps/datacity/values-hasadna-auto-updated.yaml | grep ckanDgpServerImage | cut -d' ' -f2)"
+IMAGE="$(echo $IMAGE | sed 's/docker.pkg.github.com/ghcr.io/')"
+docker run --network host -it --entrypoint python \
+    -e CKAN_INSTANCE_DEV_URL=http://localhost:5000 -e CKAN_INSTANCE_DEV_API_KEY \
+    $IMAGE -m datacity_ckan_dgp.operators.instance_initializer '{
+        "instance_name": "dev",
+        "default_organization_title": "עיריית חיפה",
+        "muni_filter_texts": "חיפה,חייפה"
+    }'
+```
+

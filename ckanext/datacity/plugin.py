@@ -10,11 +10,25 @@ class DatacityPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IOrganizationController)
     plugins.implements(plugins.IPackageController)
     plugins.implements(plugins.IResourceController)
+    plugins.implements(plugins.IConfigDeclaration)
+
+    # IConfigurer
 
     def update_config(self, config):
         add_template_directory(config, 'templates')
         add_public_directory(config, 'public')
-        add_resource('fanstatic', 'datacity')
+        add_public_directory(config, 'assets')
+        add_resource('assets', 'datacity')
+
+    def update_config_schema(self, schema):
+        return schema
+
+    # IConfigDeclaration
+
+    def declare_config_options(self, declaration, key):
+        declaration.declare(key.datacity.settings_group_id, "settings")
+
+    # ITemplateHelpers
 
     def get_helpers(self):
         return {
@@ -36,6 +50,8 @@ class DatacityPlugin(plugins.SingletonPlugin):
             "get_short_lang": helpers.get_short_lang,
         }
 
+    # IGroupController / IPackageController / IOrganizationController
+
     def read(self, entity):
         pass
 
@@ -47,6 +63,8 @@ class DatacityPlugin(plugins.SingletonPlugin):
 
     def delete(self, entity):
         helpers.plugin_edit_clear_settings_cache(entity)
+
+    # IGroupController / IOrganizationController
 
     def before_view(self, pkg_dict):
         lang = helpers.get_short_lang()
@@ -98,35 +116,51 @@ class DatacityPlugin(plugins.SingletonPlugin):
         # print('-----------')
         return pkg_dict
 
-    def before_create(self, context, resource):
+    # IPackageController
+
+    def after_dataset_create(self, context, pkg_dict):
         pass
 
-    def after_create(self, context, pkg_dict):
+    def after_dataset_update(self, context, pkg_dict):
         pass
 
-    def before_update(self, context, current, resource):
+    def after_dataset_delete(self, context, pkg_dict):
         pass
 
-    def after_update(self, context, pkg_dict):
+    def after_dataset_show(self, context, pkg_dict):
         pass
 
-    def before_delete(self, context, resource, resources):
-        pass
-
-    def after_delete(self, context, pkg_dict):
-        pass
-
-    def after_show(self, context, pkg_dict):
-        pass
-
-    def before_show(self, resource_dict):
-        pass
-
-    def before_search(self, search_params):
+    def before_dataset_search(self, search_params):
         return search_params
 
-    def after_search(self, search_results, search_params):
+    def after_dataset_search(self, search_results, search_params):
         return search_results
 
-    def before_index(self, pkg_dict):
+    def before_dataset_index(self, pkg_dict):
         return pkg_dict
+
+    def before_dataset_view(self, pkg_dict):
+        return pkg_dict
+
+    # IResourceController
+
+    def before_resource_create(self, *args, **kwargs):
+        pass
+
+    def after_resource_create(self, *args, **kwargs):
+        pass
+
+    def before_resource_update(self, *args, **kwargs):
+        pass
+
+    def after_resource_update(self, *args, **kwargs):
+        pass
+
+    def before_resource_delete(self, *args, **kwargs):
+        pass
+
+    def after_resource_delete(self, *args, **kwargs):
+        pass
+
+    def before_resource_show(self, resource_dict):
+        return resource_dict

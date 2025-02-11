@@ -2,7 +2,7 @@
     <h1 class="heading-side search-heading-sls">
         {{ h.setting('homepage_title_text_line_1', 'פורטל מידע פתוח') }}<br/>
     </h1>
-    <form class="module-content search-form search-container-standard" method="get" action="{% url_for controller='package', action='search' %}">
+    <form class="module-content search-form search-container-standard" method="get" action="{% url_for controller='dataset', action='search' %}">
         <h1 class="heading">
           {{ h.setting('homepage_title_text_line_1', 'פורטל מידע פתוח') }}<br/>
           {{ h.setting('homepage_title_text_line_2', h.site_title()) }}
