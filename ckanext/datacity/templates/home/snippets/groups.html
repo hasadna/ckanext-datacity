@@ -1,11 +1,13 @@
 <div class="search-by-cat">
+    {% if h.setting('homepage_title_design') != 'single-line-side' %}
     <h3 class="heading">{{ _('Or, Search By Group') }}:</h3>
+    {% endif %}
     <ul class="surrey-media-grid">
         {% for group in h.homepage_groups() %}
         <li class="surrey-media-item">
             <a href="{{ h.url_for(controller='group', action='read', id=group.name) }}" title="{{ group.display_name }}">
                 <div class="surrey-media-item-wrap">
-                    <img src="{{ group.image_display_url }}" alt="{{ group.display_name }}" width="51" height="51">
+                    <img src="{{ group.image_display_url }}" alt="{{ group.display_name }}" {% if h.setting('homepage_title_design') == 'single-line-side' %}width="85" height="85"{% else %}width="51" height="51"{% endif %}>
                     <span>{{ group.display_name }}</span>
                 </div>
             </a>
@@ -13,4 +15,9 @@
         {% endfor %}
     </ul>
     <div style="clear:both"></div>
+    <div class="search-form search-container-sls">
+        <form class="module-content search-form" method="get" action="{% url_for controller='dataset', action='search' %}">
+            {% snippet 'home/snippets/search_box.html' %}
+        </form>
+    </div>
 </div>

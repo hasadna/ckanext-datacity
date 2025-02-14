@@ -1,15 +1,12 @@
-version: '3.2'
-
 services:
 
   redis:
-    image: redis:alpine@sha256:8be79c511a69ad912f0366d5250968916d1438ff3b1a420c52e3ada98d03c57a
+    image: redis:7.4.2@sha256:93a8d83b707d0d6a1b9186edecca2e37f83722ae0e398aee4eea0ff17c2fad0e
     ports:
       - "6379:6379"
 
   solr:
-    # built from hasadna/ckan-cloud-docker
-    image: datacity/solr@sha256:60bc7a7868de065eb1e4fc7a86b1df553b23432f0e62beaaa08667b29b9fd39f
+    image: ckan/ckan-solr:2.11-solr9@sha256:166c7e832601de81f18389fd25d323f98d18b57c42acdc8dfe9a9d8e58e8cda6
     ports:
         - "8983:8983"
     volumes:

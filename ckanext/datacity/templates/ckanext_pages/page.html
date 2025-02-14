@@ -1,12 +1,33 @@
 {% ckan_extends %}
 
 {% block ckanext_pages_content %}
-    {% if c.page.content and c.page.content.strip().startswith('--datacity-gallery--') %}
+    {% set content = c.page.content %}
+    {% if content and '--datacity-gallery--' in c.page.content %}
+        {% set content = c.page.content.split('--datacity-gallery--')[0] %}
+    {% endif %}
+    {% if content %}
+      <div class="ckanext-pages-content">
+        {% set editor = h.get_wysiwyg_editor() %}
+        <!-- editor set to "{{ editor }}"-->
+        {% if editor %}
+          <div>
+              {{content|safe}}
+          </div>
+        {% else %}
+          {{ h.render_content(content) }}
+        {% endif %}
+      </div>
+    {% else %}
+      <p class="empty">{{ _('This page currently has no content') }}</p>
+    {% endif %}
+    {% if c.page.content and '--datacity-gallery--' in c.page.content %}
 <style>
   /* Added border to carousel */
   #myCarousel {
     border: 2px solid #000;
-    padding: 10px;
+    max-width: 850px;
+    padding-right: 50px;
+    padding-left: 50px;
   }
 
   .carousel-inner > .item > img {
@@ -56,7 +77,8 @@
   .carousel-inner .item a img {
     margin: 0 auto;
     display: block;
-    height: 600px;
+    max-height: 380px;
+    width: auto;
   }
 
   .carousel-control {
@@ -79,6 +101,12 @@
 
   .carousel-indicators .active {
     background-color: #000;
+  }
+
+  #myCarousel h2 {
+    font-size: 30px;
+      margin-top: 10px;
+      margin-bottom: 0;
   }
 </style>
 
@@ -113,6 +141,7 @@
       slides.forEach(function(slide, index) {
         var slide_link = slide.link;
         var slide_image = slide_images_prefix + slide.gallery_image + slide_images_suffix;
+        var slide_headline = slide.gallery_headline;
         var indicator = document.createElement('li');
         indicator.setAttribute('data-target', '#myCarousel');
         indicator.setAttribute('data-slide-to', index);
@@ -132,6 +161,10 @@
         img.src = slide_image;
         img.alt = '';
         anchor.appendChild(img);
+        var caption = document.createElement('h2');
+        caption.style.textAlign = 'center';
+        caption.innerHTML = slide_headline;
+        itemDiv.appendChild(caption);
         itemDiv.appendChild(anchor);
         innerContainer.appendChild(itemDiv);
       });
@@ -148,7 +181,5 @@
       });
   });
 </script>
-    {% else  %}
-        {{ super() }}
     {% endif %}
 {% endblock %}

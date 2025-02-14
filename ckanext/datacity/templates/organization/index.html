@@ -1,0 +1,7 @@
+{% ckan_extends %}
+
+{% block toolbar %}
+    {% if h.setting('footer_design') != 'alternative1' %}
+        {{ super() }}
+    {% endif %}
+{% endblock %}

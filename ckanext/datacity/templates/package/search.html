@@ -1,5 +1,27 @@
 {% ckan_extends %}
 
+{% block toolbar %}
+    {% if h.setting('footer_design') != 'alternative1' %}
+        {{ super() }}
+    {% endif %}
+{% endblock %}
+
+{% block secondary_content %}
+    {% if h.setting('footer_design') == 'alternative1' %}
+    <div class="mainpage_secondary_content_header">
+        קטלוג מידע
+    </div>
+    {% endif %}
+      <div class="filters">
+        <div>
+          {% for facet in facet_titles %}
+            {% snippet 'snippets/facet_list.html', title=facet_titles[facet], name=facet, search_facets=search_facets, hide_empty=true %}
+          {% endfor %}
+        </div>
+        <a class="close no-text hide-filters"><i class="fa fa-times-circle"></i><span class="text">close</span></a>
+      </div>
+{% endblock %}
+
 {% block form %}
     <h1 class="hide-heading">{{ _('Datasets') }}</h1>
     {{ super() }}

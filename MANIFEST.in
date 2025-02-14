@@ -1,1 +1,6 @@
-recursive-include ckanext/datacity *.html *.json *.js *.less *.css *.mo *.eot *.svg *.ttf *.woff *.woff2 *.png *.txt
+include README.rst
+include LICENSE
+include requirements.txt
+recursive-include ckanext/datacity *.html *.json *.js *.less *.css *.mo *.eot *.svg *.ttf *.woff *.woff2 *.png *.txt *.yml
+recursive-include ckanext/datacity/migration *.ini *.py *.mako
+recursive-include ckanext/datacity/public *.*

@@ -1,0 +1,5 @@
+datacity-css:
+  output: ckanext-datacity/%(version)s-datacity.css
+  filters: cssrewrite
+  contents:
+    - css/datacity-theme.css

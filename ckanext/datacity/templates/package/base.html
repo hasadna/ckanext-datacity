@@ -9,11 +9,11 @@
       <li>{% link_for _('Organizations'), controller='organization', action='index', named_route=group_type + '_index' %}</li>
       <li>{% link_for organization|truncate(30), controller='organization', action='read', id=pkg.organization.name, named_route=group_type + '_read' %}</li>
     {% else %}
-      <li>{% link_for _('Datasets'), controller='package', action='search' %}</li>
+      <li>{% link_for _('Datasets'), controller='dataset', action='search' %}</li>
     {% endif %}
-    <li{{ self.breadcrumb_content_selected() }}>{% link_for h.get_dataset_name_lang(pkg, dataset)|truncate(30), controller='package', action='read', id=pkg.name %}</li>
+    <li{{ self.breadcrumb_content_selected() }}>{% link_for h.get_dataset_name_lang(pkg, dataset)|truncate(30), controller='dataset', action='read', id=pkg.name %}</li>
   {% else %}
-    <li>{% link_for _('Datasets'), controller='package', action='search' %}</li>
+    <li>{% link_for _('Datasets'), controller='dataset', action='search' %}</li>
     <li class="active"><a href="">{{ _('Create Dataset') }}</a></li>
   {% endif %}
 {% endblock %}

@@ -1,0 +1,2 @@
+-e 'git+https://github.com/ckan/ckanext-pages.git@2a92bb874a82a2c008d5764ce290ae6950e428af#egg=ckanext-pages'
+-e "git+https://github.com/ckan/ckanext-scheming.git@49527ec191254a2f457b44daf870ca08e9c1a1ea#egg=ckanext-scheming"
