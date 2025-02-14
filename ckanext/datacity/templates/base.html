@@ -188,11 +188,11 @@
       }
     }
     {% if h.setting('homepage_title_design') == 'single-line-side' %}
-        .homepage.layout-1 {
+        .homepage {
             background-color: #182d88;
         }
         @media (max-width: 768px) {
-            .homepage.layout-1 {
+            .homepage {
                 background-color: transparent;
             }
         }
@@ -223,7 +223,7 @@
         .footer-row a.logo img {
             width: 115px;
         }
-        [role=main] {
+        .main {
             padding:0;
             background:white;
         }
@@ -284,18 +284,18 @@
             background-position: 0 -18px;
         }
         .filters .nav-item.active > a, .filters .nav-item > a:hover {
-            background-color: #291e89;
-            color: white;
+            background-color: #291e89 !important;
+            color: white !important;
         }
         .filters .badge {
             color: #291e89;
-            background-color: #eeeeee;
-            border-radius: 5px;
+            background-color: #eeeeee !important;
+            border-radius: 5px !important;
             margin-right: 25px;
         }
         .filters .nav-facet .nav-item.active .badge {
-            background-color: transparent;
-            color: white;
+            background-color: transparent !important;
+            color: white !important;
         }
         #dataset-search-form .pill {
             background-color: #291e89;

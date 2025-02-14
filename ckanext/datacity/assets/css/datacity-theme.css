@@ -3,9 +3,49 @@ body {
     background: initial;
 }
 
+.hidden {
+    display: none !important;
+}
+
+.navbar.masthead {
+    display: block;
+    padding: 10px 0 30px !important;
+}
+
+.navbar.masthead > .container {
+    display: block;
+}
+
+.navbar.masthead ul.nav-pills {
+    display: block;
+}
+
+.navbar.masthead ul.nav-pills li {
+    position: relative;
+    display: block;
+}
+
+.navbar.masthead ul.nav-pills li a {
+    position: relative;
+    display: block;
+    padding: 10px 15px 3px;
+}
+
+.navbar.masthead ul.nav-pills li a:hover {
+    text-decoration: none;
+}
+
 .masthead .nav > li > a {
     font-size: 16px;
     font-weight: bold;
+}
+
+[role=main] {
+    min-height: 350px;
+}
+
+.homepage .module-search {
+    border: 1px solid transparent;
 }
 
 .homepage .module-search .module-content .heading {
@@ -57,6 +97,10 @@ body {
 
 .search-form .search-input.search-giant {
     margin: 0 25%;
+}
+
+.search-form .search-input.search-giant button {
+    left: 15px;
 }
 
 @media (max-width: 768px) {
@@ -258,7 +302,7 @@ ul.surrey-media-grid {
     margin: 50px 0 35px 0;
 }
 
-.homepage-datasets-top-container h3.dataset-heading a {
+.homepage-datasets-top-container h2.dataset-heading a {
     font-weight: bold;
     font-size: 16px;
 }
@@ -316,6 +360,10 @@ ul.nav-facet li.nav-item span {
 
 ul.nav-facet li.nav-item {
     border: 0;
+}
+
+.module-narrow .nav-item.active > a:before, .module-narrow .nav-aside li.active a:before {
+    display: none;
 }
 
 .module-footer {
@@ -624,6 +672,11 @@ form.lang-select select {
     background-color: #258340;
 }
 
+.btn-primary {
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
 .badge {
     background-color: #707070;
 }
@@ -668,4 +721,9 @@ h2.mainpage_secondary_content_header span {
     display: block;
     padding: 0;
     border: 0;
+}
+
+form#dataset-search-form h1 {
+    font-size: 21px;
+    font-weight: normal;
 }

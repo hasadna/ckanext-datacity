@@ -72,6 +72,8 @@ Edit the configuration (`venv3/etc/development.ini`):
 ```
 ckan.plugins = activity datacity scheming_datasets scheming_groups pages
 
+ckan.devserver.watch_patterns = <ABSOLUTE_PATH_TO_CKANEXT_DATACITY>/**
+
 scheming.dataset_schemas = ckanext.datacity:scheming-dataset.json
 scheming.group_schemas = ckanext.datacity:scheming-group-settings.json ckanext.datacity:scheming-group-automation.json
 ```
@@ -92,7 +94,7 @@ ckan -c venv3/etc/development.ini sysadmin add admin
 ```
 docker compose up -d redis solr db
 . venv3/bin/activate
-( cd venv3/src/ckan && ckan -c ../../etc/development.ini run )
+bin/dev_start.sh
 ```
 
 Stop all containers
